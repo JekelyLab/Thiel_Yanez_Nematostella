@@ -316,7 +316,7 @@ EC50_table2 <- ggdraw() + draw_image(readPNG("pictures/EC50_table2.png"))
 
 
 #define layout for patchwork to assemble figure panels
-layout1 <- "
+layout <- "
 ###bBc
 ######
 CdDeEf
@@ -330,7 +330,7 @@ LmMnNo
 OpPPQQ
 "
 
-Fig4 <- GLWLp.R018a + GLWLp.R018b + HIRa.R021 + 
+Fig3 <- GLWLp.R018a + GLWLp.R018b + HIRa.R021 + 
   HIRa.R029 + FLRNa.R026 + FLRNa.R197 + FLRNa.R230 + PFHa.R036 + QWa.R069 + 
   QGRFa.R070 + QGRFa.R234 + QITRFa.R196 + LRWa1.R019  + 
   LRWa.R193 + LRWa3.R204 + LRWa2.R213 + PRGa.R028 + 
@@ -338,15 +338,15 @@ Fig4 <- GLWLp.R018a + GLWLp.R018b + HIRa.R021 +
   PRGa.R202 + PRGa.R210 + PRGa.R211 + PRGa.R219 + 
   PRGa.R220 + PRGa.R221 + PRGa.R222 + PRGa.R223 +
   EC50_table1 + EC50_table2 +
-  plot_layout(design = layout1, heights = c(1, 0.05, 1, 0.05, 1, 0.05, 1, 0.05, 1, 0.05, 1, 0.05, 1, 0.05, 1)) +
+  plot_layout(design = layout, heights = c(1, 0.05, 1, 0.05, 1, 0.05, 1, 0.05, 1, 0.05, 1, 0.05, 1, 0.05, 1)) +
   plot_annotation() & 
   theme(plot.tag = element_text(size = 12, face='plain'))
 
-ggsave("figures/Figure4.pdf", limitsize = FALSE, 
-         units = c("px"), Fig4, width = 2400, height = 2400)
+ggsave("figures/Figure3.pdf", limitsize = FALSE, 
+         units = c("px"), Fig3, width = 2400, height = 2400)
 
-ggsave("figures/Figure4.png", limitsize = FALSE, 
-         units = c("px"), Fig4, width = 2400, height = 2400, bg='white')
+ggsave("figures/Figure3.png", limitsize = FALSE, 
+         units = c("px"), Fig3, width = 2400, height = 2400, bg='white')
 
 
 }
