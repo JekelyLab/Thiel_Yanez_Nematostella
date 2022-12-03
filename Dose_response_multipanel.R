@@ -12,26 +12,28 @@ library(devtools)
 library(knitr)
 library(vroom)
 library(credentials)
-
-#check working directory- should be the project dir, all directories will be defined relative to this dir
-getwd()
-
+library(plotly)
+library(networkD3)
+library(webshot2)
 
 # read data ---------------------------------------------------------------
-AllGPCR <- vroom("/home/dt380/Dropbox/R_hub/Nvec_GPCRs/data/00_Nvec_Dose_response_assays_cleaned.csv")
+AllGPCR <- vroom("00_Nvec_Dose_response_assays_cleaned.csv")
 
 # BE CAREFUL OF THE HEADER OF YOUR CONCENTRATIONS, depending on how the values were saved this may or may not work------
 #I solve it by copying the names on the headers of my file.
 AllGPCRtoplot <- AllGPCR %>%
-  pivot_longer(c("0",	"1.00E-13", "1.00E-12",	"1.00E-11", "1.00E-10",	"1.00E-09",	"1.00E-08",	"1.00E-07",	"1.00E-06",	"1.00E-05",	"1.00E-04"), 
-               names_to = "concentration", values_to = "luminescence")
+  pivot_longer(c(
+    "0", "1.00E-13", "1.00E-12",	"1.00E-11", "1.00E-10",	
+    "1.00E-09",	"1.00E-08",	"1.00E-07",	"1.00E-06",	
+    "1.00E-05",	"1.00E-04"
+    ),
+    names_to = "concentration", values_to = "luminescence"
+)
 
-#AllGPCRtoplot <- AllGPCR %>%
- # pivot_longer(starts_with(c("0", "1e")),
-  #             names_to = "concentration", values_to = "luminescence")
 
-#convert conc valus to double
-AllGPCRtoplot$concentration <- as.double(AllGPCRtoplot$concentration)
+#convert conc values to double
+AllGPCRtoplot <- AllGPCRtoplot %>% 
+  mutate(concentration = as.double(concentration))
 
 # delete the NA data from the row because otherwise normalization  --------
 
@@ -65,28 +67,73 @@ AllGPCRtoplot <- AllGPCRtoplot %>%
   group_by(Replicate, Receptor, Peptide)%>%
   mutate('norm_luminescence'=normalize_to_ctr(luminescence))
 
-# Plot with fitted curve and LL4 analysis DRC -----------------------------
+
+# plotting function -------------------------------------------------------
+
+DRC_plot <- function(Receptor_name){
+  AllGPCRtoplot %>% 
+    filter(Receptor == Receptor_name) %>%
+    ggplot(aes(
+      x = concentration, 
+      y = norm_luminescence, 
+      group = Peptide, 
+      colour = Peptide)
+      ) +
+    geom_boxplot(aes(
+      group = paste(concentration, Peptide)), 
+      outlier.shape=NA, size=0.5, width=0.4
+      ) + 
+    geom_smooth(
+      method = drm, method.args = list(fct = L.4()), 
+      se = FALSE, linewidth = 1
+      ) +
+    scale_x_log10(
+      breaks = c(1e-14,1e-13,1e-12,1e-10,1e-8,1e-6,1e-4), 
+      limits = c(1e-13,1e-3)
+      ) +
+    scale_y_continuous(limits = c(-10, 110), breaks = c(0, 50, 100)) +
+    theme_minimal() + 
+    theme(axis.text.x = element_text(size = 16, angle = 90), 
+          axis.text.y = element_text(size = 16), 
+          legend.text = element_text(size=20), 
+          legend.title = element_text(size=16),
+          legend.key.size = unit(3, "mm"),
+          legend.position = "bottom",
+          legend.margin = margin(unit(-30,"mm")),
+          axis.title=element_text(size=22), 
+          axis.title.x=element_text(margin = margin(t = 10)),
+          panel.background = element_blank(),
+          plot.title = element_text(size = 20)) +
+    stat_summary(fun.y = mean, geom = "point", shape = 20, size = 1.5) +
+    labs(
+      x = "", y = "", 
+      colour = "", title = Receptor_name
+      ) +
+    scale_color_manual(
+      values = c(
+        "grey40", "#E69F00", "#56B4E9", 
+        "#009E73", "#F0E442", "#0072B2", 
+        "#D55E00", "#CC79A7")
+      )
+  
+  ggsave(
+    paste("pictures/", Receptor_name, ".png", sep = ""), 
+    width = 1400, height = 1400, limitsize = TRUE, 
+    units = c("px"), bg='white'
+  )
+}
+
+DRC_plot("LRWa1.R019")
+# plot and save all receptor plots ----------------------------------------
+# Plot with fitted curve and LL4 analysis DRC
 #plots out the dataset with the corresponding 4-parameter log-logit dose response curves
+
 AllGPCRtoplot %>% 
-  ggplot(aes(x=concentration, y=norm_luminescence, colour=Peptide, group=Peptide)) +
-  #Remove this comment and the next # to plot the boxplot. However, there is not
-  #enough space in the case of multiple peptides in the same graph for all the boxes
-  #geom_boxplot(aes(group=concentration, colour=Peptide, group=Peptide), outlier.shape=NA, size=0.15, width=0.2) +
-  geom_smooth(method = drm, method.args = list(fct = L.4()), se = FALSE) +
-  scale_x_log10(breaks = c(1e-14,1e-13,1e-12,1e-10,1e-8,1e-6,1e-4),limits = c(1e-13,1e-3)) +
-  theme_gray(base_size = 11) + 
-  grids(linetype = "longdash") + #to change the colour if grids, change it in the function above +
-  theme(axis.text=element_text(size = 14), 
-        legend.text = element_text(size=16), 
-        legend.title=element_text(size=20),
-        axis.title=element_text(size=26), 
-        axis.title.x=element_text(margin = margin(t = 10)),
-        panel.background = element_blank()) +
-  stat_summary(fun.y=mean, geom="point", shape=20, size=4) +
-  stat_summary(fun.data = mean_se, geom="errorbar", size=0.3) +
-  facet_wrap(vars(Receptor))
-
-
+  ungroup() %>%
+  dplyr::select(Receptor) %>%
+  unique() %>%
+  pull(Receptor) %>%
+  sapply(function(Receptor) DRC_plot(Receptor))
 
 
 # EC50 calculation --------------------------------------------------------
@@ -108,42 +155,198 @@ for (i in ListREceptors) {
     }
   }}
 
-# Save the plot as pdf and png --------------------------------------------
 
-ggsave("pictures/GPCR_curve.pdf", 
-       width = 2000, 
-       height = 1600, limitsize = TRUE, 
-       units = c("px"))
-ggsave("pictures/GPCR_curve.png", 
-       width = 1700, 
-       height = 1400, limitsize = TRUE, 
-       units = c("px"), bg='white')
+# draw a table of EC50 values ---------------------------------------------
 
+table1 <- plot_ly(
+  type = 'table',
+  columnwidth = c(
+    3.8, 2.2, 2.5, 0.1,
+    3.8, 2.2, 2.5
+    ),
+  columnorder = c(
+    0, 1, 2, 3, 
+    4, 5, 6
+    ),
+  header = list(
+    values = c(
+      "Receptor", "Peptide", "EC50", "", 
+      "Receptor", "Peptide", "EC50"
+      ),
+    align = c("center"),
+    line = list(width = 1, color = 'black'),
+    fill = list(color = c(
+      "#E69F00", "#56B4E9", "#cccccc", "#cccccc",
+      "#E69F00", "#56B4E9", "#cccccc")),
+    font = list(
+      family = "Arial", size = 14, color = "black")
+  ),
+  cells = list(
+    values = rbind(as_tibble(df[2:11, ]) %>%
+                     select(Receptor) %>%
+                     pull(), 
+                   as_tibble(df[2:11, ]) %>%
+                     select(Peptide) %>%
+                     pull(), 
+                   formatC(as.double(df[2:11, 3]), 
+                           format = "e", digits = 2),
+                   "",
+                   c(as_tibble(df[12:20, ]) %>%
+                     select(Receptor) %>%
+                     pull(), ""), 
+                   c(as_tibble(df[12:20, ]) %>%
+                     select(Peptide) %>%
+                     pull(), ""), 
+                   c(formatC(as.double(df[12:20, 3]), 
+                           format = "e", digits = 2), "")
+    ),
+    align = c("center", "center", "center"),
+    line = list(color = "black", width = 0.3),
+    font = list(family = "Arial", size = 12, 
+                color = c("black"))
+  )
+)
 
+table1
 
+table2 <- plot_ly(
+  type = 'table',
+  columnwidth = c(
+    3.8, 2.2, 2.5, 0.1,
+    3.8, 2.2, 2.5
+  ),
+  columnorder = c(
+    0, 1, 2, 3, 
+    4, 5, 6
+  ),
+  header = list(
+    values = c(
+      "Receptor", "Peptide", "EC50", "", 
+      "Receptor", "Peptide", "EC50"
+    ),
+    align = c("center"),
+    line = list(width = 1, color = 'black'),
+    fill = list(color = c(
+      "#E69F00", "#56B4E9", "#cccccc", "#cccccc",
+      "#E69F00", "#56B4E9", "#cccccc")),
+    font = list(
+      family = "Arial", size = 14, color = "black")
+  ),
+  cells = list(
+    values = rbind(as_tibble(df[21:30, ]) %>%
+                     select(Receptor) %>%
+                     pull(), 
+                   as_tibble(df[21:30, ]) %>%
+                     select(Peptide) %>%
+                     pull(), 
+                   formatC(as.double(df[21:30, 3]), 
+                           format = "e", digits = 2),
+                   "",
+                   c(as_tibble(df[31:40, ]) %>%
+                       select(Receptor) %>%
+                       pull()),
+                   c(as_tibble(df[31:40, ]) %>%
+                       select(Peptide) %>%
+                       pull()), 
+                   c(formatC(as.double(df[31:40, 3]), 
+                             format = "e", digits = 2))
+    ),
+    align = c("center", "center", "center"),
+    line = list(color = "black", width = 0.3),
+    font = list(family = "Arial", size = 12, 
+                color = c("black"))
+  )
+)
+
+table2
+
+saveNetwork(table1, "pictures/EC50_table1.html")
+webshot2::webshot(url="pictures/EC50_table1.html",
+                  file="pictures/EC50_table1.png",
+                  vwidth=550, vheight=500, #define the size of the browser window
+                  cliprect = c(58, 23, 484, 233), zoom=2)
+saveNetwork(table2, "pictures/EC50_table2.html")
+webshot2::webshot(url="pictures/EC50_table2.html",
+                  file="pictures/EC50_table2.png",
+                  vwidth=550, vheight=500, #define the size of the browser window
+                  cliprect = c(58, 23, 484, 233), zoom=2)
 
 # save the table as supplementary file ------------------------------------
 
-readr::write_csv(GPCR, file="supplements/Supplementary_table1.csv", na="", quote="none")
-
+readr::write_csv(AllGPCRtoplot, file="supplements/Supplementary_table1.csv", na="", quote="none")
 
 
 # assemble figure ---------------------------------------------------------
 
-#define layout for patchwork to assemble figure panels
-layout <-"
-AABB"
+#read panels
 
-Fig1 <- panelA + panelB + 
-  plot_layout(design = layout, heights = c(1)) +
-  plot_annotation(tag_levels = 'A') & 
+{
+GLWLp.R018a <- ggdraw() + draw_image(readPNG("pictures/GLWLp.R018b.png"))
+GLWLp.R018b <- ggdraw() + draw_image(readPNG("pictures/GLWLp.R018b.png"))
+HIRa.R021 <- ggdraw() + draw_image(readPNG("pictures/HIRa.R021.png"))
+HIRa.R029 <- ggdraw() + draw_image(readPNG("pictures/HIRa.R029.png"))
+FLRNa.R026 <- ggdraw() + draw_image(readPNG("pictures/FLRNa.R026.png"))
+FLRNa.R197 <- ggdraw() + draw_image(readPNG("pictures/FLRNa.R197.png"))
+FLRNa.R230 <- ggdraw() + draw_image(readPNG("pictures/FLRNa.R230.png"))
+PFHa.R036 <- ggdraw() + draw_image(readPNG("pictures/PFHa.R036.png"))
+QWa.R069 <- ggdraw() + draw_image(readPNG("pictures/QWa.R069.png"))
+QGRFa.R070 <- ggdraw() + draw_image(readPNG("pictures/QGRFa.R070.png"))
+QGRFa.R234 <- ggdraw() + draw_image(readPNG("pictures/QGRFa.R234.png"))
+QITRFa.R196 <- ggdraw() + draw_image(readPNG("pictures/QITRFa.R196.png"))
+LRWa1.R019 <- ggdraw() + draw_image(readPNG("pictures/LRWa1.R019.png"))
+LRWa.R193 <- ggdraw() + draw_image(readPNG("pictures/LRWa.R193.png"))
+LRWa3.R204 <- ggdraw() + draw_image(readPNG("pictures/LRWa3.R204.png"))
+LRWa2.R213  <- ggdraw() + draw_image(readPNG("pictures/LRWa2.R213.png"))
+PRGa.R028 <- ggdraw() + draw_image(readPNG("pictures/PRGa.R028.png"))
+PRGa.R032 <- ggdraw() + draw_image(readPNG("pictures/PRGa.R032.png"))
+PRGa.R198 <- ggdraw() + draw_image(readPNG("pictures/PRGa.R198.png"))
+PRGa.R199 <- ggdraw() + draw_image(readPNG("pictures/PRGa.R199.png"))
+PRGa.R200 <- ggdraw() + draw_image(readPNG("pictures/PRGa.R200.png"))
+PRGa.R202 <- ggdraw() + draw_image(readPNG("pictures/PRGa.R202.png"))
+PRGa.R210 <- ggdraw() + draw_image(readPNG("pictures/PRGa.R210.png"))
+PRGa.R211 <- ggdraw() + draw_image(readPNG("pictures/PRGa.R211.png"))
+PRGa.R219 <- ggdraw() + draw_image(readPNG("pictures/PRGa.R219.png"))
+PRGa.R220 <- ggdraw() + draw_image(readPNG("pictures/PRGa.R220.png"))
+PRGa.R221 <- ggdraw() + draw_image(readPNG("pictures/PRGa.R221.png"))
+PRGa.R222 <- ggdraw() + draw_image(readPNG("pictures/PRGa.R222.png"))
+PRGa.R223 <- ggdraw() + draw_image(readPNG("pictures/PRGa.R223.png"))
+
+EC50_table1 <- ggdraw() + draw_image(readPNG("pictures/EC50_table1.png"))
+EC50_table2 <- ggdraw() + draw_image(readPNG("pictures/EC50_table2.png"))
+
+
+#define layout for patchwork to assemble figure panels
+layout1 <- "
+###bBc
+######
+CdDeEf
+######
+FgGhHi
+######
+IjJkKl
+######
+LmMnNo
+######
+OpPPQQ
+"
+
+Fig4 <- GLWLp.R018a + GLWLp.R018b + HIRa.R021 + 
+  HIRa.R029 + FLRNa.R026 + FLRNa.R197 + FLRNa.R230 + PFHa.R036 + QWa.R069 + 
+  QGRFa.R070 + QGRFa.R234 + QITRFa.R196 + LRWa1.R019  + 
+  LRWa.R193 + LRWa3.R204 + LRWa2.R213 + PRGa.R028 + 
+  PRGa.R032 + PRGa.R198 + PRGa.R199 + PRGa.R200 + 
+  PRGa.R202 + PRGa.R210 + PRGa.R211 + PRGa.R219 + 
+  PRGa.R220 + PRGa.R221 + PRGa.R222 + PRGa.R223 +
+  EC50_table1 + EC50_table2 +
+  plot_layout(design = layout1, heights = c(1, 0.05, 1, 0.05, 1, 0.05, 1, 0.05, 1, 0.05, 1, 0.05, 1, 0.05, 1)) +
+  plot_annotation() & 
   theme(plot.tag = element_text(size = 12, face='plain'))
 
-#save
-ggsave("figures/Figure1.pdf", limitsize = FALSE, 
-         units = c("px"), Fig1, width = 1600, height = 800)
-ggsave("figures/Figure1.png", limitsize = FALSE, 
-         units = c("px"), Fig1, width = 1600, height = 800, bg='white')
+ggsave("figures/Figure4.pdf", limitsize = FALSE, 
+         units = c("px"), Fig4, width = 2400, height = 2400)
+
+ggsave("figures/Figure4.png", limitsize = FALSE, 
+         units = c("px"), Fig4, width = 2400, height = 2400, bg='white')
 
 
-
+}
