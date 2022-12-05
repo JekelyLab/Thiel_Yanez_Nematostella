@@ -1,7 +1,11 @@
-{
+#This script generates Figure3 of the Thiel et al paper on Nematostella GPCR deorphaisation
+
+
+
 rm(list = ls(all.names = TRUE)) #will clear all objects includes hidden objects.
 gc() #free up memory and report the memory usage.
 # load packages -----------------------------------------------------------
+{
 library(tidyverse)
 library(cowplot)
 library(png)
@@ -292,7 +296,7 @@ readr::write_csv(AllGPCRtoplot, file="supplements/Supplementary_table1.csv", na=
 #read panels
 
 {
-GLWLp.R018a <- ggdraw() + draw_image(readPNG("pictures/GLWLp.R018b.png")) + 
+GLWLp.R018a <- ggdraw() + draw_image(readPNG("pictures/GLWLp.R018a.png")) + 
   draw_label("norm. luminescence", x = 0.05, y = 0.5, size = 10, angle = 90)
 GLWLp.R018b <- ggdraw() + draw_image(readPNG("pictures/GLWLp.R018b.png"))
 HIRa.R021 <- ggdraw() + draw_image(readPNG("pictures/HIRa.R021.png"))
