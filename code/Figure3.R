@@ -18,8 +18,10 @@ library(networkD3)
 library(webshot2)
 }
 
+Okabe_Ito <- c("#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", 
+               "#CC79A7", "#000000")
 # read data ---------------------------------------------------------------
-AllGPCR <- vroom("00_Nvec_Dose_response_assays_cleaned.csv")
+AllGPCR <- vroom("data/00_Nvec_Dose_response_assays_cleaned.csv")
 
 # BE CAREFUL OF THE HEADER OF YOUR CONCENTRATIONS, depending on how the values were saved this may or may not work------
 #I solve it by copying the names on the headers of my file.
@@ -144,23 +146,27 @@ ListREceptors <- unique(AllGPCRtoplot$Receptor)
 ListPeptides <- unique(AllGPCRtoplot$Peptide)
 df <- ""
 for (i in ListREceptors) {
-  RecSubset <- filter(AllGPCRtoplot, Receptor==i)
+  RecSubset <- filter(AllGPCRtoplot, Receptor == i)
   for (k in ListPeptides) {
-    SubsetRecPep <- filter(RecSubset, Peptide==k)
-    if (nrow(SubsetRecPep)>0) {
-      write.csv(SubsetRecPep, file = paste("Subs_", i, k), sep = ",", row.names = FALSE);
-      model <- drm(norm_luminescence~concentration, data = SubsetRecPep, fct=LL.4(names =c("Slope", "Lower Limit", "Upper Limit", "ED50" )))
+    SubsetRecPep <- filter(RecSubset, Peptide == k)
+    if (nrow(SubsetRecPep) > 0) {
+#      write.csv(SubsetRecPep, file = paste("Subs_", i, k), sep = ",", row.names = FALSE);
+      model <- drm(
+        norm_luminescence~concentration, 
+        data = SubsetRecPep, 
+        fct=LL.4(names =c("Slope", "Lower Limit", "Upper Limit", "ED50" ))
+        )
       EC50 <- model$coefficients[4]
-      dfrow <- c(Receptor=i, Peptide=k, EC50=EC50)
+      dfrow <- c(Receptor = i, Peptide = k, EC50 = EC50)
       df <- rbind(df, dfrow)
-      write.csv(df, file = "Ec50table.csv", sep = ",", row.names = FALSE);
+      write.csv(df, file = "supplements/EC50table.csv", sep = ",", row.names = FALSE);
     }
   }
 }
 
-
 # draw a table of EC50 values ---------------------------------------------
 
+{
 table <- plot_ly(
   type = 'table',
   columnwidth = c(
@@ -244,6 +250,37 @@ webshot2::webshot(url="pictures/EC50_table.html",
                   file="pictures/EC50_table.png",
                   vwidth=850, vheight=500, #define the size of the browser window
                   cliprect = c(58, 23, 784, 233), zoom=2)
+}
+
+#histogram of min EC50 values (for each receptor only the lowest value)
+as_tibble(df[2:40, ]) %>%                      # Specify data frame
+  group_by(Receptor) %>%
+  rename(EC50 = starts_with("EC50")) %>%
+  mutate(EC50 = as.double(EC50)) %>%
+  summarise_at(vars(EC50),  # Specify column
+               list(minEC50 = min)) %>%     #select only the min value for each receptor
+  ggplot(aes(minEC50)) +
+  geom_histogram(color = "grey50", fill = Okabe_Ito[1]) +
+  scale_x_log10(breaks = c(1e-11, 1e-10, 1e-9, 1e-8, 1e-7, 1e-6, 1e-5)) +
+  theme_minimal() +
+  labs(x = bquote(EC[50])) +
+  theme(axis.text.x = element_text(size = 12, angle = 90), 
+        axis.text.y = element_text(size = 12), 
+        legend.text = element_text(size=15), 
+        legend.title = element_text(size=12),
+        legend.key.size = unit(2.5, "mm"),
+        legend.position = "bottom",
+        legend.margin = margin(unit(-30,"mm")),
+        axis.title=element_text(size=18), 
+        axis.title.x=element_text(margin = margin(t = 8)),
+        panel.background = element_blank(),
+        plot.title = element_text(size = 16, hjust = 0.3)) 
+
+ggsave(
+  paste("pictures/EC50_histogram.png"), 
+  width = 1000, height = 1000, limitsize = TRUE, 
+  units = c("px"), bg='white'
+)
 
 # save the table as supplementary file ------------------------------------
 
@@ -292,10 +329,12 @@ PRGa.R222 <- ggdraw() + draw_image(readPNG("pictures/PRGa.R222.png")) +
 PRGa.R223 <- ggdraw() + draw_image(readPNG("pictures/PRGa.R223.png"))
 
 EC50_table <- ggdraw() + draw_image(readPNG("pictures/EC50_table.png"))
+EC50_hist <- ggdraw() + draw_image(readPNG("pictures/EC50_histogram.png"))
+
 
 #define layout for patchwork to assemble figure panels
 layout <- "
-###bBc
+##AbBc
 ######
 CdDeEf
 ######
@@ -305,7 +344,7 @@ IjJkKl
 ######
 LmMnNo
 ######
-OpPPPP
+OppppP
 "
 
 Fig3 <- GLWLp.R018a + GLWLp.R018b + HIRa.R021 + 
@@ -315,16 +354,16 @@ Fig3 <- GLWLp.R018a + GLWLp.R018b + HIRa.R021 +
   PRGa.R032 + PRGa.R198 + PRGa.R199 + PRGa.R200 + 
   PRGa.R202 + PRGa.R210 + PRGa.R211 + PRGa.R219 + 
   PRGa.R220 + PRGa.R221 + PRGa.R222 + PRGa.R223 +
-  EC50_table +
+  EC50_table + EC50_hist +
   plot_layout(design = layout, heights = c(1, 0.05, 1, 0.05, 1, 0.05, 1, 0.05, 1, 0.05, 1)) +
   plot_annotation(tag_levels = "i") & 
   theme(plot.tag = element_text(size = 12, face='plain'))
 
 ggsave("figures/Figure3.pdf", limitsize = FALSE, 
-         units = c("px"), Fig3, width = 3400, height = 3600)
+         units = c("px"), Fig3, width = 3400, height = 3700)
 
 ggsave("figures/Figure3.png", limitsize = FALSE, 
-         units = c("px"), Fig3, width = 3400, height = 3600, bg='white')
+         units = c("px"), Fig3, width = 3400, height = 3700, bg='white')
 
 
 }
