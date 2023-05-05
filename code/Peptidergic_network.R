@@ -146,9 +146,16 @@ GPCRs <- c(
 
 length(pNPs)
 length(GPCRs)
-as_tibble(pNPs)
 
-left_join(as_tibble(pNPs), as_tibble(GPCRs))
+#for Daniel, check this tibble with pNP GPCR pairs as rows
+pNP_GPCR <- tibble(col1 = pNPs,
+       col2 = GPCRs )
+pNP_GPCR
+
+#fill in here the EC50 values for the 30 pairs
+EC50 <- c(1e-06, 2, 1.5e-5, )
+
+
 
 hex_colors <- c(Okabe_Ito, oranges, Tol_muted, bluepurple[3:9])
 length(hex_colors)
