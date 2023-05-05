@@ -536,7 +536,7 @@ network_all <- readPNG("pictures/peptidergic_networks_full_modules.png")
 network_HIRa <- readPNG("pictures/peptidergic_networks_full_peptide_1_HIRa | NV2.8166.png")
 network_LRWa <- readPNG("pictures/peptidergic_networks_full_peptide_2_LRWa-1 | NV2.10311.png")
 network_PRGa <- readPNG("pictures/peptidergic_networks_full_peptide_3_PRGa | NV2.16299.png")
-network_QGFa <- readPNG("pictures//peptidergic_networks_full_peptide_4_QGRFa | NV2.8437.png")
+network_QGRFa <- readPNG("pictures//peptidergic_networks_full_peptide_4_QGRFa | NV2.8437.png")
 network_QWa <- readPNG("pictures/peptidergic_networks_full_peptide_5_QWa | NV2.4017.png")
 network_FLRNa <- readPNG("pictures/peptidergic_networks_full_peptide_6_FLRNa | NV2.1448.png")
 network_VRHa <- readPNG("pictures/peptidergic_networks_full_peptide_7_VRHa | NV2.15165.png")
@@ -550,8 +550,8 @@ panel_LRWa <- ggdraw() + draw_image(network_LRWa) +
   draw_label("LRWa", x = 0.1, y = 0.98, size = 11)
 panel_PRGa <- ggdraw() + draw_image(network_PRGa) +
   draw_label("PRGa", x = 0.1, y = 0.98, size = 11)
-panel_QGFa <- ggdraw() + draw_image(network_QGFa) +
-  draw_label("QGFa", x = 0.1, y = 0.98, size = 11)
+panel_QGRFa <- ggdraw() + draw_image(network_QGFa) +
+  draw_label("QGRFa", x = 0.1, y = 0.98, size = 11)
 panel_QWa <- ggdraw() + draw_image(network_QWa) +
   draw_label("QWa", x = 0.1, y = 0.98, size = 11)
 panel_FLRNa <- ggdraw() + draw_image(network_FLRNa) +
@@ -566,7 +566,7 @@ EFGH
 "
 
 Fig6 <- panel_all +  panel_LRWa + panel_FLRNa + panel_PRGa + 
-  panel_QGFa + panel_HIRa + panel_QWa + panel_VRHa +
+  panel_QGRFa + panel_HIRa + panel_QWa + panel_VRHa +
   plot_layout(design = layout, guides = "collect", heights = c(1, 0.05, 1)) +
   plot_annotation(tag_levels = "A") &
   theme(plot.tag = element_text(size = 12, face = "plain"))
