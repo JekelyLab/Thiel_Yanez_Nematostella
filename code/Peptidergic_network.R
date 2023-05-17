@@ -49,7 +49,7 @@ GPCR_DevSubset <- seurat_list$DevSubset
 GPCR_AdultSubset <- seurat_list$AdultSubset
 
 genes <- rownames(GPCR_DevSubset)
-genes
+
 DotPlot(
   object = GPCR_DevSubset,
   features = genes,
@@ -57,12 +57,6 @@ DotPlot(
   col.max = 2
 )
 
-DotPlot(
-  object = GPCR_AdultSubset,
-  features = genes,
-  col.min = -2,
-  col.max = 2
-)
 
 #GetAssayData(GPCR)
 #GPCR@assays$RNA@counts
@@ -72,13 +66,10 @@ DotPlot(
 # Calculate average expression of gene1 across all cells
 avg_expression_genes <- AverageExpression(object = GPCR, features = genes)
 
-# View the average expression value
-avg_expression_genes
-
 # Convert to data frame and reshape to long format tibble
 # Convert to tibble and reshape to long format
 avg_expression_df <- as.data.frame(avg_expression_genes)
-avg_expression_df
+
 
 avg_expression_tibble <- avg_expression_df %>%
   rownames_to_column(var = "genes") %>%
@@ -88,9 +79,6 @@ avg_expression_tibble <- avg_expression_df %>%
 celltypes <- unique(avg_expression_tibble %>%
   select(celltype) %>%
   pull())
-
-genes
-grep("FLR", genes, value = TRUE)
 
 pNPs <- c(
   "GLWL-a | NV2.23205",
@@ -144,15 +132,7 @@ GPCRs <- c(
   "VRHa-R.186 | NV2.3564"
 )
 
-length(pNPs)
-length(GPCRs)
-
-#for Daniel, check this tibble with pNP GPCR pairs as rows
-pNP_GPCR <- tibble(col1 = pNPs,
-       col2 = GPCRs )
-pNP_GPCR
-
-#fill in here the EC50 values for the 30 pairs
+#EC50 values for the peptide-GPCR pairs
 EC50 <- c(
   9e-07, 
   2.1e-9, 
@@ -169,7 +149,7 @@ EC50 <- c(
   2e-9, 1e-8, 
   3.4e-8, 
   4.7e-9, 2.1e-6, 
-  7.7-11, 
+  7.7e-11, 
   8e-7, 
   1.1e-8, 
   4.7e-9, 
@@ -179,8 +159,15 @@ EC50 <- c(
   2.7e-10
 )
 
+length(pNPs)
+length(GPCRs)
+length(EC50)
 
 
+#for Daniel, check this tibble with pNP GPCR pairs as rows
+pNP_GPCR <- tibble(peptide = pNPs,
+                   receptor = GPCRs,
+                   EC50 =EC50)
 hex_colors <- c(Okabe_Ito, oranges, Tol_muted, bluepurple[3:9])
 length(hex_colors)
 
@@ -194,6 +181,7 @@ create_pNP_GPCR_graph <- function(pNP, GPCR, expressions, colors, cell_types, N_
     # pNP and GPCR name
     pNP_name <- pNP[i]
     GPCR_name <- GPCR[i]
+    absEC50_log <- abs(log10(EC50[i]))
 
     # define sources, targets and expression for pNP and GPCR
     sources <- expressions %>%
@@ -219,7 +207,7 @@ create_pNP_GPCR_graph <- function(pNP, GPCR, expressions, colors, cell_types, N_
     # calculate strength for each edge, defined as the geometric mean of pNP and GPCR expression
     x <- rep(pNP_level, each = length(targets))
     y <- rep(GPCR_level, length(sources))
-    geometric_mean <- sqrt(x * y)
+    geometric_mean <- sqrt(x * y)*absEC50_log
 
     edge_color <- colors[i]
 
@@ -229,7 +217,8 @@ create_pNP_GPCR_graph <- function(pNP, GPCR, expressions, colors, cell_types, N_
       to = rep(targets, length(sources)),
       value = geometric_mean,
       color = edge_color,
-      peptide = pNP_name
+      peptide = pNP_name,
+      receptor = GPCR_name
     )
     
     # add edges to graph
@@ -241,17 +230,11 @@ create_pNP_GPCR_graph <- function(pNP, GPCR, expressions, colors, cell_types, N_
   return(graph.funct)
 }
 
-# create networks for ID.separate ------------------------------------------
 
-GPCR.separate <- SetIdent(GPCR_AdultSubset, value = "ID.separate")
 
-DotPlot(
-  object = GPCR.separate,
-  features = genes,
-  col.min = -2,
-  col.max = 2
-) +
-  theme(axis.text = element_text(size = 4))
+# create networks for ID.separate for dev subset ------------------------------------------
+
+GPCR.separate <- SetIdent(GPCR_DevSubset, value = "ID.separate")
 
 unique(Idents(GPCR.separate))
 
@@ -295,17 +278,10 @@ names(avg_expression_df.separate)
 avg_expression_tibble.separate <- avg_expression_df.separate %>%
   rownames_to_column(var = "genes") %>%
   pivot_longer(cols = -genes, names_to = "celltype", values_to = "avg_expression")
-avg_expression_tibble.separate
 
 avg_expression_tibble.separate %>%
   select(avg_expression) %>%
   max()
-
-avg_expression_tibble.separate %>%
-  select(avg_expression) %>%
-  sqrt() %>%
-  ggplot(aes(x=avg_expression)) +
-  geom_histogram() 
 
 avg_expression_tibble.separate %>%
   filter(genes == unlist(pNPs) | genes == unlist(GPCRs)) %>%
@@ -320,6 +296,12 @@ celltypes.separate <- unique(avg_expression_tibble.separate %>%
                       select(celltype) %>%
                       pull())
 
+avg_expression_tibble.separate %>%
+  select(avg_expression) %>%
+  ggplot(aes(x=avg_expression)) +
+  geom_histogram() +
+  scale_x_log10()
+  
 
 # create and grow graph with function ------------------------------------
 
@@ -328,21 +310,18 @@ graph.separate <- create_pNP_GPCR_graph(
   hex_colors[1:length(pNPs)], celltypes.separate, length(pNPs)
 )
 
-
-#plot edge weight distribution
-graph.separate %>%
+# remove zero weight edges
+graph.separate <- graph.separate %>%
   activate(edges) %>%
-  as.data.frame() %>%
-  ggplot(aes(x=(value))) +
-  geom_histogram() +
-  scale_x_log10() +
-  theme_minimal()
+  filter(value > 0) 
 
+# Save `tbl_graph` as a serialized binary file
+saveRDS(graph.separate, "source_data/Figure5_source_data_multilayer_tbl_graph_dev_subset.rds")
 
 # filter by edge weight
 graph.separate <- graph.separate %>%
   activate(edges) %>%
-  filter(value > 3) 
+  filter(value > 30) 
 
 #number of connections after filtering
 graph.separate %>%
@@ -367,18 +346,68 @@ graph.separate.connected <- graph.separate.connected %>%
   )
 )
 
-#plot edge weight distribution
-graph.separate.connected %>%
-  activate(edges) %>%
-  as.data.frame() %>%
-  ggplot(aes(x=(value))) +
-  geom_histogram() +
-  scale_x_log10() +
-  theme_minimal()
-
 # Calculate the Leiden clustering and modularity
 lc <- leiden(graph.separate.connected)
 max(lc)
+
+# visNetwork plot with peptides colored --------------------------------
+
+## convert to VisNetwork
+Conn_graph.visn <- toVisNetworkData(graph.separate.connected)
+
+#assing module id to nodes
+Conn_graph.visn$nodes$group <- lc
+
+#change node color to grey
+Conn_graph.visn$nodes$color <- "grey"
+
+Conn_graph.visn$nodes$fontSize <- Conn_graph.visn$nodes$value
+
+visNet <- visNetwork(Conn_graph.visn$nodes, Conn_graph.visn$edges) %>%
+  visIgraphLayout(layout = "layout_nicely", physics = TRUE, randomSeed = 23, type = "full") %>%
+  visPhysics(
+    solver = "hierarchicalRepulsion", 
+    hierarchicalRepulsion = list(
+      nodeDistance = 200, 
+      centralGravity = 0.1, 
+      springConstant = 0.00005
+    )
+  ) %>%
+  visEdges(
+    smooth = list(style = "curve-style: haystack;"),
+    scaling = list(min = 5, max = 35),
+    color = list(inherit = TRUE, opacity = 0.7),
+    arrows = list(to = list(
+      enabled = TRUE,
+      scaleFactor = 1.5, type = "arrow"
+    ))
+  ) %>%
+  visNodes(
+    borderWidth = 0.3,
+    color = list(border = "black"),
+    opacity = 1,
+    scaling = list(min = 65, max = 120),
+    shape = "dot",
+    font = list(color = "black", strokeWidth = 2, background = "white", size = 75),
+  ) %>%
+  visOptions(highlightNearest = TRUE, width = 2000, height = 1600)
+
+
+saveNetwork(visNet, "pictures/peptidergic_networks_full_peptides_dev.html")
+user_agent <- "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/112.0"
+
+webshot2::webshot(
+  url = "pictures/peptidergic_networks_full_peptides_dev.html",
+  file = "pictures/peptidergic_networks_full_peptides_dev.png", useragent = user_agent,
+  vwidth = 2000, vheight = 1600, # define the size of the browser window
+  cliprect = c(100, 120, 1800, 1480), zoom = 2, delay = 100
+)
+
+library(rgexf)
+# Serialise the graph to Gephi format
+gexf_data <- rgexf::igraph.to.gexf(as.igraph(as_tbl_graph(Conn_graph.visn)))
+# Write the network into a gexf (Gephi) file
+write.gexf(gexf_data, output = "data/peptidergic_networks_full_peptides_dev.gexf")
 
 
 # visNetwork plot with modules highlighted --------------------------------
@@ -427,23 +456,20 @@ visNet <- visNetwork(Conn_graph.visn$nodes, Conn_graph.visn$edges) %>%
     opacity = 1,
     scaling = list(min = 65, max = 120),
     shape = "dot",
-    font = list(color = "black", strokeWidth = 2, background = "white", size = 55),
+    font = list(color = "black", strokeWidth = 2, background = "white", size = 75),
   ) %>%
   visOptions(highlightNearest = TRUE, width = 2000, height = 1600)
-visNet
 
 
-
-saveNetwork(visNet, "pictures/peptidergic_networks_full_modules.html")
+saveNetwork(visNet, "pictures/peptidergic_networks_full_modules_dev.html")
 user_agent <- "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/112.0"
 
 webshot2::webshot(
-  url = "pictures/peptidergic_networks_full_modules.html",
-  file = "pictures/peptidergic_networks_full_modules.png", useragent = user_agent,
+  url = "pictures/peptidergic_networks_full_modules_dev.html",
+  file = "pictures/peptidergic_networks_full_modules_dev.png", useragent = user_agent,
   vwidth = 2000, vheight = 1600, # define the size of the browser window
-  cliprect = c(100, 120, 1800, 1480), zoom = 2, delay = 500
+  cliprect = c(100, 120, 1800, 1480), zoom = 2, delay = 100
 )
-
 
 # export graphs for each peptide ------------------------------------------
 
@@ -512,41 +538,381 @@ visNet <- visNetwork(Conn_graph.visn$nodes, Conn_graph.visn$edges) %>%
     opacity = 1,
     scaling = list(min = 65, max = 120),
     shape = "dot",
-    font = list(color = "black", strokeWidth = 2, background = "white", size = 55),
+    font = list(color = "black", strokeWidth = 2, background = "white", size = 75),
   ) %>%
   visOptions(highlightNearest = TRUE, width = 2000, height = 1600)
 
-filename <- paste("pictures/peptidergic_networks_full_peptide_", i, "_", unique_pNPs[i], ".html", sep = "")
-filename2 <- paste("pictures/peptidergic_networks_full_peptide_",  i, "_", unique_pNPs[i], ".png", sep = "")
+filename <- paste("pictures/peptidergic_networks_full_peptide_dev_", unique_pNPs[i], ".html", sep = "")
+filename2 <- paste("pictures/peptidergic_networks_full_peptide_dev_", unique_pNPs[i], ".png", sep = "")
 saveNetwork(visNet, filename)
 
 webshot2::webshot(
   url = filename,
   file = filename2, useragent = user_agent,
   vwidth = 2000, vheight = 1600, # define the size of the browser window
-  cliprect = c(160, 120, 1750, 1480), zoom = 2, delay = 500
+  cliprect = c(160, 120, 1750, 1480), zoom = 2, delay = 100
 )
 
 }
 
+# create networks for ID.separate for adult subset ------------------------------------------
 
-# Plot sankeyNetwork ------------------------------------------------------
-Conn_graph.visn$nodes
-Conn_graph.visn$edges$from
-str(Conn_graph.visn$edges)
-Sankey <- sankeyNetwork(
-  Links = Conn_graph.visn$edges, Nodes = Conn_graph.visn$nodes,
-  Source = "from", Target = "to", NodeID = "id", Value = 'value', 
-  colourScale = JS("d3.scaleOrdinal(d3.schemeCategory20);"), fontSize = 7,
-  fontFamily = NULL, nodeWidth = 15, 
-  nodePadding = 10, margin = NULL,
-  height = NULL, width = NULL, 
-  iterations = 32, sinksRight = TRUE
+GPCR.separate <- SetIdent(GPCR_AdultSubset, value = "ID.separate")
+
+DotPlot(
+  object = GPCR.separate,
+  features = genes,
+  col.min = -2,
+  col.max = 2
+) +
+  theme(axis.text = element_text(size = 4))
+
+unique(Idents(GPCR.separate))
+
+# use gsub to remove the parentheses
+cleaned_ids <- gsub("[()]", "", Idents(GPCR.separate))
+cleaned_ids <- gsub("[?]", "", cleaned_ids)
+
+# set the new IDs in the Seurat object
+Idents(GPCR.separate) <- cleaned_ids
+
+# Calculate average expression of gene1 across all cells
+avg_expression_genes.separate <- AverageExpression(object = GPCR.separate, features = genes)
+
+# Convert to tibble and reshape to long format
+avg_expression_df.separate <- as.data.frame(avg_expression_genes.separate)
+
+# Replace column names using regex
+{
+  names(avg_expression_df.separate) <- sub("RNA\\.", "", names(avg_expression_df.separate))
+  names(avg_expression_df.separate) <- sub("neurogland\\.all\\.", "N_", names(avg_expression_df.separate))
+  names(avg_expression_df.separate) <- sub("\\.\\.", ".", names(avg_expression_df.separate))
+  names(avg_expression_df.separate) <- sub("endomesoderm", "edMes", names(avg_expression_df.separate))
+  names(avg_expression_df.separate) <- sub("ectomesoderm", "ecMes", names(avg_expression_df.separate))
+  names(avg_expression_df.separate) <- sub("ectoderm", "ect", names(avg_expression_df.separate))
+  names(avg_expression_df.separate) <- sub("gastrodermis", "gderm", names(avg_expression_df.separate))
+  names(avg_expression_df.separate) <- sub("embryonic", "emb", names(avg_expression_df.separate))
+  names(avg_expression_df.separate) <- sub("spermatagonia", "sperm", names(avg_expression_df.separate))
+  names(avg_expression_df.separate) <- sub("cnidocyte", "cnido", names(avg_expression_df.separate))
+  names(avg_expression_df.separate) <- sub("planula", "pla", names(avg_expression_df.separate))
+  names(avg_expression_df.separate) <- sub("muscle", "mus", names(avg_expression_df.separate))
+  names(avg_expression_df.separate) <- sub("epithelia", "epith", names(avg_expression_df.separate))
+  names(avg_expression_df.separate) <- sub("pharyngeal", "pha", names(avg_expression_df.separate))
+  names(avg_expression_df.separate) <- sub("gland", "gld", names(avg_expression_df.separate))
+  names(avg_expression_df.separate) <- sub("early\\.state", "early", names(avg_expression_df.separate))
+  names(avg_expression_df.separate) <- sub("retractor", "retr", names(avg_expression_df.separate))
+  names(avg_expression_df.separate) <- sub("gland\\.mucous", "gld\\.muc", names(avg_expression_df.separate))
+  
+  names(avg_expression_df.separate)
+}
+
+avg_expression_tibble.separate <- avg_expression_df.separate %>%
+  rownames_to_column(var = "genes") %>%
+  pivot_longer(cols = -genes, names_to = "celltype", values_to = "avg_expression")
+
+avg_expression_tibble.separate %>%
+  select(avg_expression) %>%
+  max()
+
+avg_expression_tibble.separate %>%
+  filter(genes == unlist(pNPs) | genes == unlist(GPCRs)) %>%
+  ggplot(aes(x=celltype, y=genes, color=sqrt(avg_expression), size=sqrt(avg_expression))) +
+  geom_point() +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle=90),
+        axis.text = element_text(size=6)) +
+  scale_color_gradientn(colors = c("white", Okabe_Ito[c(6,5,5,5,8,8,8)]))
+
+celltypes.separate <- unique(avg_expression_tibble.separate %>%
+                               select(celltype) %>%
+                               pull())
+
+
+# create and grow graph with function ------------------------------------
+
+graph.separate <- create_pNP_GPCR_graph(
+  pNPs, GPCRs, avg_expression_tibble.separate, 
+  hex_colors[1:length(pNPs)], celltypes.separate, length(pNPs)
 )
 
-Sankey
+# remove zero weight edges
+graph.separate <- graph.separate %>%
+  activate(edges) %>%
+  filter(value > 0) 
+
+# Save `tbl_graph` as a serialized binary file
+saveRDS(graph.separate, "source_data/Figure5_source_data_multilayer_tbl_graph_adult_subset.rds")
+
+#plot edge weight distribution
+graph.separate %>%
+  activate(edges) %>%
+  as.data.frame() %>%
+  ggplot(aes(x=(value))) +
+  geom_histogram() +
+  scale_x_log10() +
+  theme_minimal()
 
 
+# filter by edge weight
+graph.separate <- graph.separate %>%
+  activate(edges) %>%
+  filter(value > 15) 
+
+#number of connections after filtering
+graph.separate %>%
+  activate(edges) %>%
+  select(value) %>%
+  pull() %>%
+  length()
+
+# Get the subgraph of connected nodes
+connected_nodes <- components(graph.separate)$membership == which.max(components(graph.separate)$csize)
+graph.separate.connected <- induced_subgraph(graph.separate, which(connected_nodes))
+
+#add weighted degree to nodes
+graph.separate.connected <- graph.separate.connected %>%
+  as_tbl_graph() %>%
+  activate(nodes) %>%
+  mutate(value = centrality_degree(
+    weights = NULL,
+    mode = "all",
+    loops = TRUE,
+    normalized = FALSE
+  )
+  )
+
+#plot edge weight distribution
+graph.separate.connected %>%
+  activate(edges) %>%
+  as.data.frame() %>%
+  ggplot(aes(x=(value))) +
+  geom_histogram() +
+  scale_x_log10() +
+  theme_minimal()
+
+# Calculate the Leiden clustering and modularity
+lc <- leiden(graph.separate.connected)
+max(lc)
+
+# visNetwork plot with peptides colored --------------------------------
+
+## convert to VisNetwork
+Conn_graph.visn <- toVisNetworkData(graph.separate.connected)
+
+#assing module id to nodes
+Conn_graph.visn$nodes$group <- lc
+
+#change node color to grey
+Conn_graph.visn$nodes$color <- "grey"
+
+Conn_graph.visn$nodes$fontSize <- Conn_graph.visn$nodes$value
+
+visNet <- visNetwork(Conn_graph.visn$nodes, Conn_graph.visn$edges) %>%
+  visIgraphLayout(layout = "layout_nicely", physics = TRUE, randomSeed = 23, type = "full") %>%
+  visPhysics(
+    solver = "hierarchicalRepulsion", 
+    hierarchicalRepulsion = list(
+      nodeDistance = 200, 
+      centralGravity = 0.1, 
+      springConstant = 0.00005
+    )
+  ) %>%
+  visEdges(
+    smooth = list(style = "curve-style: haystack;"),
+    scaling = list(min = 5, max = 35),
+    color = list(inherit = TRUE, opacity = 0.7),
+    arrows = list(to = list(
+      enabled = TRUE,
+      scaleFactor = 1.5, type = "arrow"
+    ))
+  ) %>%
+  visNodes(
+    borderWidth = 0.3,
+    color = list(border = "black"),
+    opacity = 1,
+    scaling = list(min = 65, max = 120),
+    shape = "dot",
+    font = list(color = "black", strokeWidth = 2, background = "white", size = 75),
+  ) %>%
+  visOptions(highlightNearest = TRUE, width = 2000, height = 1600)
+
+
+saveNetwork(visNet, "pictures/peptidergic_networks_full_peptides.html")
+user_agent <- "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/112.0"
+
+webshot2::webshot(
+  url = "pictures/peptidergic_networks_full_peptides.html",
+  file = "pictures/peptidergic_networks_full_peptides.png", useragent = user_agent,
+  vwidth = 2000, vheight = 1600, # define the size of the browser window
+  cliprect = c(100, 120, 1800, 1480), zoom = 2, delay = 100
+)
+
+library(rgexf)
+# Serialise the graph to Gephi format
+gexf_data <- rgexf::igraph.to.gexf(as.igraph(as_tbl_graph(Conn_graph.visn)))
+# Write the network into a gexf (Gephi) file
+write.gexf(gexf_data, output = "data/peptidergic_networks_full_peptides.gexf")
+
+
+# visNetwork plot with modules highlighted --------------------------------
+
+## convert to VisNetwork
+Conn_graph.visn <- toVisNetworkData(graph.separate.connected)
+
+#assing module id to nodes
+Conn_graph.visn$nodes$group <- lc
+
+Conn_graph.visn$edges$color <- c()
+
+# Define colors for each group
+color_lookup <- c("1" = Okabe_Ito[1], "2" = Okabe_Ito[2], "3" = Okabe_Ito[3], "4" = Okabe_Ito[5], "5" = Okabe_Ito[7])
+
+# Assign colors based on group
+Conn_graph.visn$nodes$color <- sapply(Conn_graph.visn$nodes$group, function(group) {
+  return(color_lookup[group])
+})
+
+unique(Conn_graph.visn$edges$peptide)
+Conn_graph.visn$nodes$fontSize <- Conn_graph.visn$nodes$value
+
+visNet <- visNetwork(Conn_graph.visn$nodes, Conn_graph.visn$edges) %>%
+  visIgraphLayout(layout = "layout_nicely", physics = TRUE, randomSeed = 23, type = "full") %>%
+  visPhysics(
+    solver = "hierarchicalRepulsion", 
+    hierarchicalRepulsion = list(
+      nodeDistance = 200, 
+      centralGravity = 0.1, 
+      springConstant = 0.00005
+    )
+  ) %>%
+  visEdges(
+    smooth = list(style = "curve-style: haystack;"),
+    scaling = list(min = 5, max = 35),
+    color = list(inherit = TRUE, opacity = 0.7),
+    arrows = list(to = list(
+      enabled = TRUE,
+      scaleFactor = 1.5, type = "arrow"
+    ))
+  ) %>%
+  visNodes(
+    borderWidth = 0.3,
+    color = list(border = "black"),
+    opacity = 1,
+    scaling = list(min = 65, max = 120),
+    shape = "dot",
+    font = list(color = "black", strokeWidth = 2, background = "white", size = 75),
+  ) %>%
+  visOptions(highlightNearest = TRUE, width = 2000, height = 1600)
+
+
+saveNetwork(visNet, "pictures/peptidergic_networks_full_modules.html")
+user_agent <- "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/112.0"
+
+webshot2::webshot(
+  url = "pictures/peptidergic_networks_full_modules.html",
+  file = "pictures/peptidergic_networks_full_modules.png", useragent = user_agent,
+  vwidth = 2000, vheight = 1600, # define the size of the browser window
+  cliprect = c(100, 120, 1800, 1480), zoom = 2, delay = 100
+)
+
+
+# export graph for each peptide ------------------------------------------
+
+## convert to VisNetwork
+Conn_graph.visn <- toVisNetworkData(graph.separate.connected)
+
+getIDColor <- function(id) {
+  if(grepl("N_", id)) {
+    return("#56B4E9") 
+  } else if(grepl("N_gland", id)) {
+    return("#E69F00")
+  } else if(grepl("mucous", id)) {
+    return("#CC79A7") 
+  } else if(grepl("PGCs", id)) {
+    return("#F0E442")
+  } else if(grepl("endomesoderm", id)) {
+    return("#0072B2")
+  } else if(grepl("muscle", id)) {
+    return("#111111")
+  } else {
+    return("#CCCCCC") # (default color)
+  }
+}
+
+colors <- sapply(Conn_graph.visn$nodes$id, getIDColor) # apply getIDColor to each ID
+Conn_graph.visn$nodes$color <- colors
+
+
+unique_pNPs <- unique(Conn_graph.visn$edges$peptide)
+unique_pNPs
+
+for (i in 1:length(unique_pNPs)) {
+  
+  #filter connections
+  connections_to_show <- !sapply(
+    Conn_graph.visn$edges$peptide, 
+    grepl, 
+    pattern = unique_pNPs[i]
+  )
+  
+  #add FALSE or TRUE to edges$hidden variable (will toggle edges on/off)
+  Conn_graph.visn$edges$hidden <- connections_to_show
+  Conn_graph.visn$edges$hidden
+  visNet <- visNetwork(Conn_graph.visn$nodes, Conn_graph.visn$edges) %>%
+    visIgraphLayout(layout = "layout_nicely", physics = TRUE, randomSeed = 23, type = "full") %>%
+    visPhysics(
+      solver = "hierarchicalRepulsion", 
+      hierarchicalRepulsion = list(
+        nodeDistance = 200, 
+        centralGravity = 0.1, 
+        springConstant = 0.00005
+      )
+    ) %>%
+    visEdges(
+      smooth = list(style = "curve-style: haystack;"),
+      scaling = list(min = 5, max = 35),
+      color = list(inherit = TRUE, opacity = 0.7),
+      arrows = list(to = list(
+        enabled = TRUE,
+        scaleFactor = 1.5, type = "arrow"
+      ))
+    ) %>%
+    visNodes(
+      borderWidth = 0.3,
+      color = list(border = "black"),
+      opacity = 1,
+      scaling = list(min = 65, max = 120),
+      shape = "dot",
+      font = list(color = "black", strokeWidth = 2, background = "white", size = 75),
+    ) %>%
+    visOptions(highlightNearest = TRUE, width = 2000, height = 1600)
+  
+  filename <- paste("pictures/peptidergic_networks_full_peptide_", unique_pNPs[i], ".html", sep = "")
+  filename2 <- paste("pictures/peptidergic_networks_full_peptide_", unique_pNPs[i], ".png", sep = "")
+  saveNetwork(visNet, filename)
+  
+  webshot2::webshot(
+    url = filename,
+    file = filename2, useragent = user_agent,
+    vwidth = 2000, vheight = 1600, # define the size of the browser window
+    cliprect = c(160, 120, 1750, 1480), zoom = 2, delay = 100
+  )
+  
+}
+
+# plot color scale of edges -----------------------------------------------
+
+graph.separate.connected %>%
+  activate(edges) %>%
+  as_tibble() %>%
+  select(color,peptide) %>%
+  unique() %>%
+  ggplot(aes(y = peptide, fill = color)) +
+  geom_bar(position = "stack") +
+  guides(fill = "none") +
+  theme_minimal() +
+  scale_x_discrete() +
+  theme(axis.title = element_blank())
 
 
 # assemble figure ---------------------------------------------------------
@@ -556,51 +922,118 @@ library(patchwork)
 library(png)
 library(ggplot2)
 
-network_all <- readPNG("pictures/peptidergic_networks_full_modules.png")
-network_HIRa <- readPNG("pictures/peptidergic_networks_full_peptide_1_HIRa | NV2.8166.png")
-network_LRWa <- readPNG("pictures/peptidergic_networks_full_peptide_2_LRWa-1 | NV2.10311.png")
-network_PRGa <- readPNG("pictures/peptidergic_networks_full_peptide_3_PRGa | NV2.16299.png")
-network_QGRFa <- readPNG("pictures//peptidergic_networks_full_peptide_4_QGRFa | NV2.8437.png")
-network_QWa <- readPNG("pictures/peptidergic_networks_full_peptide_5_QWa | NV2.4017.png")
-network_FLRNa <- readPNG("pictures/peptidergic_networks_full_peptide_6_FLRNa | NV2.1448.png")
-network_VRHa <- readPNG("pictures/peptidergic_networks_full_peptide_7_VRHa | NV2.15165.png")
+
+#dev panels
+panel_all_dev <- ggdraw() + draw_image(
+  readPNG(
+    "pictures/peptidergic_networks_full_modules_dev.png"
+  )
+) +
+  draw_label("all - developmental subset", x = 0.22, y = 0.98, size = 11)
 
 
-panel_all <- ggdraw() + draw_image(network_all) +
-  draw_label("all", x = 0.1, y = 0.98, size = 11)
-panel_HIRa <- ggdraw() + draw_image(network_HIRa) +
-  draw_label("HIRa", x = 0.1, y = 0.98, size = 11)
-panel_LRWa <- ggdraw() + draw_image(network_LRWa) +
+panel_LRWa_dev <- ggdraw() + draw_image(
+  readPNG(
+    "pictures/peptidergic_networks_full_peptide_dev_LRWa-1 | NV2.10311.png"
+  )
+) +
   draw_label("LRWa", x = 0.1, y = 0.98, size = 11)
-panel_PRGa <- ggdraw() + draw_image(network_PRGa) +
+
+panel_PRGa_dev <- ggdraw() + draw_image(
+  readPNG(
+    "pictures/peptidergic_networks_full_peptide_dev_PRGa | NV2.16299.png"
+  )
+) +
   draw_label("PRGa", x = 0.1, y = 0.98, size = 11)
-panel_QGRFa <- ggdraw() + draw_image(network_QGFa) +
-  draw_label("QGRFa", x = 0.1, y = 0.98, size = 11)
-panel_QWa <- ggdraw() + draw_image(network_QWa) +
-  draw_label("QWa", x = 0.1, y = 0.98, size = 11)
-panel_FLRNa <- ggdraw() + draw_image(network_FLRNa) +
+
+panel_FLRNa_dev <- ggdraw() + draw_image(
+  readPNG(
+    "pictures/peptidergic_networks_full_peptide_dev_FLRNa | NV2.1448.png"
+  )
+) +
   draw_label("FLRNa", x = 0.1, y = 0.98, size = 11)
-panel_VRHa <- ggdraw() + draw_image(network_VRHa) +
+
+
+
+#adult panels
+
+panel_all <- ggdraw() + draw_image(
+  readPNG(
+    "pictures/peptidergic_networks_full_modules.png"
+    )
+  ) +
+  draw_label("all - adult subset", x = 0.2, y = 0.98, size = 11)
+
+panel_HIRa <- ggdraw() + draw_image(
+  readPNG(
+    "pictures/peptidergic_networks_full_peptide_HIRa | NV2.8166.png"
+    )
+  ) +
+  draw_label("HIRa", x = 0.1, y = 0.98, size = 11)
+
+panel_LRWa <- ggdraw() + draw_image(
+  readPNG(
+    "pictures/peptidergic_networks_full_peptide_LRWa-1 | NV2.10311.png"
+    )
+  ) +
+  draw_label("LRWa", x = 0.1, y = 0.98, size = 11)
+
+panel_PRGa <- ggdraw() + draw_image(
+  readPNG(
+    "pictures/peptidergic_networks_full_peptide_PRGa | NV2.16299.png"
+    )
+  ) +
+  draw_label("PRGa", x = 0.1, y = 0.98, size = 11)
+
+panel_QGRFa <- ggdraw() + draw_image(
+  readPNG(
+    "pictures//peptidergic_networks_full_peptide_QGRFa | NV2.8437.png"
+    )
+  ) +
+  draw_label("QGRFa", x = 0.1, y = 0.98, size = 11)
+
+panel_QWa <- ggdraw() + draw_image(
+  readPNG(
+    "pictures/peptidergic_networks_full_peptide_QWa | NV2.4017.png"
+    )
+  ) +
+  draw_label("QWa", x = 0.1, y = 0.98, size = 11)
+
+panel_FLRNa <- ggdraw() + draw_image(
+  readPNG(
+    "pictures/peptidergic_networks_full_peptide_FLRNa | NV2.1448.png"
+    )
+  ) +
+  draw_label("FLRNa", x = 0.1, y = 0.98, size = 11)
+
+panel_VRHa <- ggdraw() + draw_image(
+  readPNG(
+    "pictures/peptidergic_networks_full_peptide_VRHa | NV2.15165.png"
+    )
+  ) +
   draw_label("VRHa", x = 0.1, y = 0.98, size = 11)
 
 layout <- "
 ABCD
 ####
 EFGH
+####
+IJKL
 "
 
-Fig6 <- panel_all +  panel_LRWa + panel_FLRNa + panel_PRGa + 
-  panel_QGRFa + panel_HIRa + panel_QWa + panel_VRHa +
-  plot_layout(design = layout, guides = "collect", heights = c(1, 0.05, 1)) +
+Fig5_fig_suppl1 <- panel_all_dev +  panel_LRWa_dev + panel_FLRNa_dev + panel_PRGa_dev +
+  panel_all +  panel_LRWa + panel_FLRNa + panel_PRGa + 
+  panel_QGRFa + panel_HIRa + panel_VRHa + panel_QWa +
+  plot_layout(design = layout, guides = "collect", heights = c(1, 0.05, 1, 0.05, 1)) +
   plot_annotation(tag_levels = "A") &
   theme(plot.tag = element_text(size = 12, face = "plain"))
 
-ggsave("figures/Figure6.pdf",
+ggsave("figures/Fig5_fig_suppl1.pdf",
        limitsize = FALSE,
-       units = c("px"), Fig6, width = 1750*4, height = 1480*2+1480*0.05
+       units = c("px"), Fig5_fig_suppl1, width = 1750*4, height = 1480*3+150
 )
 
-ggsave("figures/Figure6.png",
+ggsave("figures/Fig5_fig_suppl1.png",
        limitsize = FALSE,
-       units = c("px"), Fig6, width = 1750*4, height = 1480*2+1480*0.05, bg = "white"
+       units = c("px"), Fig5_fig_suppl1, width = 1750*4, height = 1480*3+150, bg = "white"
 )

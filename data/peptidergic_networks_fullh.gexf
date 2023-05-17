@@ -1,0 +1,3339 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<gexf xmlns="http://gexf.net/1.3" version="1.3" xmlns:viz="http://gexf.net/1.3/viz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://gexf.net/1.3 http://gexf.net/1.3/gexf.xsd">
+  <meta lastmodifieddate="2023-04-20">
+    <creator>Gephi 0.10.1</creator>
+    <title></title>
+    <description>A GEXF file written in R with "rgexf"</description>
+  </meta>
+  <graph defaultedgetype="directed" mode="static">
+    <attributes class="node" mode="static">
+      <attribute id="att1" title="value" type="float"/>
+      <attribute id="weighted indegree" title="Weighted In-Degree" type="double">
+        <default>0.0</default>
+      </attribute>
+      <attribute id="weighted outdegree" title="Weighted Out-Degree" type="double">
+        <default>0.0</default>
+      </attribute>
+      <attribute id="weighted degree" title="Weighted Degree" type="double">
+        <default>0.0</default>
+      </attribute>
+      <attribute id="modularity_class" title="Modularity Class" type="integer">
+        <default>0</default>
+      </attribute>
+    </attributes>
+    <attributes class="edge" mode="static">
+      <attribute id="att1" title="value" type="float"/>
+      <attribute id="att2" title="peptide" type="string"/>
+    </attributes>
+    <nodes>
+      <node id="pSC.Mitotic.1" label="pSC.Mitotic.1">
+        <attvalues>
+          <attvalue for="att1" value="2.0"/>
+          <attvalue for="weighted indegree" value="2.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="2.0"/>
+          <attvalue for="modularity_class" value="3"/>
+        </attvalues>
+        <viz:position x="0.063821346" y="0.2703714"/>
+        <viz:color r="255" g="93" b="133"/>
+      </node>
+      <node id="pSC.Mitotic.2" label="pSC.Mitotic.2">
+        <attvalues>
+          <attvalue for="att1" value="1.0"/>
+          <attvalue for="weighted indegree" value="1.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="1.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.5856292" y="0.9003735"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="pSC.Endo.NPC.2" label="pSC.Endo.NPC.2">
+        <attvalues>
+          <attvalue for="att1" value="2.0"/>
+          <attvalue for="weighted indegree" value="2.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="2.0"/>
+          <attvalue for="modularity_class" value="2"/>
+        </attvalues>
+        <viz:position x="0.9068755" y="0.7674492"/>
+        <viz:color r="40" g="179" b="106"/>
+      </node>
+      <node id="pSC.NPC.1" label="pSC.NPC.1">
+        <attvalues>
+          <attvalue for="att1" value="3.0"/>
+          <attvalue for="weighted indegree" value="3.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="3.0"/>
+          <attvalue for="modularity_class" value="2"/>
+        </attvalues>
+        <viz:position x="0.8865087" y="0.60726935"/>
+        <viz:color r="40" g="179" b="106"/>
+      </node>
+      <node id="pSC.NPC.2" label="pSC.NPC.2">
+        <attvalues>
+          <attvalue for="att1" value="1.0"/>
+          <attvalue for="weighted indegree" value="1.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="1.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.27747613" y="0.9348327"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="pSC.immune" label="pSC.immune">
+        <attvalues>
+          <attvalue for="att1" value="1.0"/>
+          <attvalue for="weighted indegree" value="1.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="1.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.6792991" y="0.96585745"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="PGCs.PGCs" label="PGCs.PGCs">
+        <attvalues>
+          <attvalue for="att1" value="1.0"/>
+          <attvalue for="weighted indegree" value="1.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="1.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.7394848" y="0.89703655"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="PGCs.spermatagonia.1" label="PGCs.spermatagonia.1">
+        <attvalues>
+          <attvalue for="att1" value="1.0"/>
+          <attvalue for="weighted indegree" value="1.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="1.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.67666906" y="0.86630744"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="N_Nl....Nkx3" label="N_Nl....Nkx3">
+        <attvalues>
+          <attvalue for="att1" value="1.0"/>
+          <attvalue for="weighted indegree" value="1.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="1.0"/>
+          <attvalue for="modularity_class" value="3"/>
+        </attvalues>
+        <viz:position x="0.2466268" y="0.13797249"/>
+        <viz:color r="255" g="93" b="133"/>
+      </node>
+      <node id="N_Nl....rxraB" label="N_Nl....rxraB">
+        <attvalues>
+          <attvalue for="att1" value="2.0"/>
+          <attvalue for="weighted indegree" value="2.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="2.0"/>
+          <attvalue for="modularity_class" value="3"/>
+        </attvalues>
+        <viz:position x="0.36162975" y="0.10499222"/>
+        <viz:color r="255" g="93" b="133"/>
+      </node>
+      <node id="N_Nl....ao.PRGa" label="N_Nl....ao.PRGa">
+        <attvalues>
+          <attvalue for="att1" value="5.0"/>
+          <attvalue for="weighted indegree" value="0.0"/>
+          <attvalue for="weighted outdegree" value="5.0"/>
+          <attvalue for="weighted degree" value="5.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.095251486" y="0.5865192"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="N_Ne.....otx.early" label="N_Ne.....otx.early">
+        <attvalues>
+          <attvalue for="att1" value="63.0"/>
+          <attvalue for="weighted indegree" value="1.0"/>
+          <attvalue for="weighted outdegree" value="62.0"/>
+          <attvalue for="weighted degree" value="63.0"/>
+          <attvalue for="modularity_class" value="0"/>
+        </attvalues>
+        <viz:position x="0.59955806" y="0.2680298"/>
+        <viz:color r="249" g="119" b="67"/>
+      </node>
+      <node id="N_Ne.....pit.1" label="N_Ne.....pit.1">
+        <attvalues>
+          <attvalue for="att1" value="163.0"/>
+          <attvalue for="weighted indegree" value="14.0"/>
+          <attvalue for="weighted outdegree" value="149.0"/>
+          <attvalue for="weighted degree" value="163.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.39011848" y="0.62468934"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="N_Ne....Nkx2.2" label="N_Ne....Nkx2.2">
+        <attvalues>
+          <attvalue for="att1" value="37.0"/>
+          <attvalue for="weighted indegree" value="14.0"/>
+          <attvalue for="weighted outdegree" value="23.0"/>
+          <attvalue for="weighted degree" value="37.0"/>
+          <attvalue for="modularity_class" value="2"/>
+        </attvalues>
+        <viz:position x="0.7164622" y="0.07291273"/>
+        <viz:color r="40" g="179" b="106"/>
+      </node>
+      <node id="N_Ne....otx.Six1.2" label="N_Ne....otx.Six1.2">
+        <attvalues>
+          <attvalue for="att1" value="8.0"/>
+          <attvalue for="weighted indegree" value="8.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="8.0"/>
+          <attvalue for="modularity_class" value="3"/>
+        </attvalues>
+        <viz:position x="0.58308834" y="0.30227697"/>
+        <viz:color r="255" g="93" b="133"/>
+      </node>
+      <node id="N_Ne....pax2" label="N_Ne....pax2">
+        <attvalues>
+          <attvalue for="att1" value="5.0"/>
+          <attvalue for="weighted indegree" value="5.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="5.0"/>
+          <attvalue for="modularity_class" value="3"/>
+        </attvalues>
+        <viz:position x="0.56814075" y="0.038976375"/>
+        <viz:color r="255" g="93" b="133"/>
+      </node>
+      <node id="N_Ns..e..AshD" label="N_Ns..e..AshD">
+        <attvalues>
+          <attvalue for="att1" value="7.0"/>
+          <attvalue for="weighted indegree" value="7.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="7.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.1448437" y="0.7233381"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="N_N....Nk1.early" label="N_N....Nk1.early">
+        <attvalues>
+          <attvalue for="att1" value="16.0"/>
+          <attvalue for="weighted indegree" value="16.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="16.0"/>
+          <attvalue for="modularity_class" value="3"/>
+        </attvalues>
+        <viz:position x="0.76645887" y="0.33396566"/>
+        <viz:color r="255" g="93" b="133"/>
+      </node>
+      <node id="N_N....Ap2.early" label="N_N....Ap2.early">
+        <attvalues>
+          <attvalue for="att1" value="15.0"/>
+          <attvalue for="weighted indegree" value="14.0"/>
+          <attvalue for="weighted outdegree" value="1.0"/>
+          <attvalue for="weighted degree" value="15.0"/>
+          <attvalue for="modularity_class" value="0"/>
+        </attvalues>
+        <viz:position x="0.55942345" y="0.20414661"/>
+        <viz:color r="249" g="119" b="67"/>
+      </node>
+      <node id="N_N....vsx.1" label="N_N....vsx.1">
+        <attvalues>
+          <attvalue for="att1" value="5.0"/>
+          <attvalue for="weighted indegree" value="4.0"/>
+          <attvalue for="weighted outdegree" value="1.0"/>
+          <attvalue for="weighted degree" value="5.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.30748144" y="0.59087694"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="N_N....emx3" label="N_N....emx3">
+        <attvalues>
+          <attvalue for="att1" value="5.0"/>
+          <attvalue for="weighted indegree" value="2.0"/>
+          <attvalue for="weighted outdegree" value="3.0"/>
+          <attvalue for="weighted degree" value="5.0"/>
+          <attvalue for="modularity_class" value="0"/>
+        </attvalues>
+        <viz:position x="0.018389756" y="0.41763228"/>
+        <viz:color r="249" g="119" b="67"/>
+      </node>
+      <node id="N_N....evx" label="N_N....evx">
+        <attvalues>
+          <attvalue for="att1" value="9.0"/>
+          <attvalue for="weighted indegree" value="4.0"/>
+          <attvalue for="weighted outdegree" value="5.0"/>
+          <attvalue for="weighted degree" value="9.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.100936115" y="0.52645093"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="N_N....GFI1B.prdm" label="N_N....GFI1B.prdm">
+        <attvalues>
+          <attvalue for="att1" value="8.0"/>
+          <attvalue for="weighted indegree" value="8.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="8.0"/>
+          <attvalue for="modularity_class" value="3"/>
+        </attvalues>
+        <viz:position x="0.19825824" y="0.30312628"/>
+        <viz:color r="255" g="93" b="133"/>
+      </node>
+      <node id="N_N....GFI1B.nk25" label="N_N....GFI1B.nk25">
+        <attvalues>
+          <attvalue for="att1" value="11.0"/>
+          <attvalue for="weighted indegree" value="11.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="11.0"/>
+          <attvalue for="modularity_class" value="0"/>
+        </attvalues>
+        <viz:position x="0.49727175" y="0.49243775"/>
+        <viz:color r="249" g="119" b="67"/>
+      </node>
+      <node id="N_N.S2....rough.1" label="N_N.S2....rough.1">
+        <attvalues>
+          <attvalue for="att1" value="2.0"/>
+          <attvalue for="weighted indegree" value="1.0"/>
+          <attvalue for="weighted outdegree" value="1.0"/>
+          <attvalue for="weighted degree" value="2.0"/>
+          <attvalue for="modularity_class" value="2"/>
+        </attvalues>
+        <viz:position x="0.4873408" y="0.0"/>
+        <viz:color r="40" g="179" b="106"/>
+      </node>
+      <node id="N_Ns....AshA.NOT" label="N_Ns....AshA.NOT">
+        <attvalues>
+          <attvalue for="att1" value="9.0"/>
+          <attvalue for="weighted indegree" value="9.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="9.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.31480518" y="0.65728885"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="N_Ns....Gsx" label="N_Ns....Gsx">
+        <attvalues>
+          <attvalue for="att1" value="16.0"/>
+          <attvalue for="weighted indegree" value="10.0"/>
+          <attvalue for="weighted outdegree" value="6.0"/>
+          <attvalue for="weighted degree" value="16.0"/>
+          <attvalue for="modularity_class" value="2"/>
+        </attvalues>
+        <viz:position x="0.32571268" y="0.37489003"/>
+        <viz:color r="40" g="179" b="106"/>
+      </node>
+      <node id="N_Ns....Otp" label="N_Ns....Otp">
+        <attvalues>
+          <attvalue for="att1" value="66.0"/>
+          <attvalue for="weighted indegree" value="5.0"/>
+          <attvalue for="weighted outdegree" value="61.0"/>
+          <attvalue for="weighted degree" value="66.0"/>
+          <attvalue for="modularity_class" value="2"/>
+        </attvalues>
+        <viz:position x="0.7971154" y="0.426979"/>
+        <viz:color r="40" g="179" b="106"/>
+      </node>
+      <node id="N_Ns....foxQ2d" label="N_Ns....foxQ2d">
+        <attvalues>
+          <attvalue for="att1" value="9.0"/>
+          <attvalue for="weighted indegree" value="9.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="9.0"/>
+          <attvalue for="modularity_class" value="0"/>
+        </attvalues>
+        <viz:position x="0.33636442" y="0.4564955"/>
+        <viz:color r="249" g="119" b="67"/>
+      </node>
+      <node id="N_Ns....foxQ2d.early" label="N_Ns....foxQ2d.early">
+        <attvalues>
+          <attvalue for="att1" value="4.0"/>
+          <attvalue for="weighted indegree" value="4.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="4.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.5725474" y="0.6416447"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="N_S.klf5.tsp" label="N_S.klf5.tsp">
+        <attvalues>
+          <attvalue for="att1" value="4.0"/>
+          <attvalue for="weighted indegree" value="4.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="4.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.7538307" y="0.6649091"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="N_S.klf5.early.state" label="N_S.klf5.early.state">
+        <attvalues>
+          <attvalue for="att1" value="9.0"/>
+          <attvalue for="weighted indegree" value="4.0"/>
+          <attvalue for="weighted outdegree" value="5.0"/>
+          <attvalue for="weighted degree" value="9.0"/>
+          <attvalue for="modularity_class" value="0"/>
+        </attvalues>
+        <viz:position x="0.10822816" y="0.6871988"/>
+        <viz:color r="249" g="119" b="67"/>
+      </node>
+      <node id="N_S2.tll.4" label="N_S2.tll.4">
+        <attvalues>
+          <attvalue for="att1" value="3.0"/>
+          <attvalue for="weighted indegree" value="3.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="3.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.26715055" y="0.69001675"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="N_S2.tll.2" label="N_S2.tll.2">
+        <attvalues>
+          <attvalue for="att1" value="5.0"/>
+          <attvalue for="weighted indegree" value="5.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="5.0"/>
+          <attvalue for="modularity_class" value="3"/>
+        </attvalues>
+        <viz:position x="0.4895257" y="0.13826983"/>
+        <viz:color r="255" g="93" b="133"/>
+      </node>
+      <node id="N_S2.tll.3" label="N_S2.tll.3">
+        <attvalues>
+          <attvalue for="att1" value="5.0"/>
+          <attvalue for="weighted indegree" value="5.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="5.0"/>
+          <attvalue for="modularity_class" value="2"/>
+        </attvalues>
+        <viz:position x="0.8097265" y="0.3671282"/>
+        <viz:color r="40" g="179" b="106"/>
+      </node>
+      <node id="N_S.AGRIN.ao" label="N_S.AGRIN.ao">
+        <attvalues>
+          <attvalue for="att1" value="5.0"/>
+          <attvalue for="weighted indegree" value="5.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="5.0"/>
+          <attvalue for="modularity_class" value="2"/>
+        </attvalues>
+        <viz:position x="0.56621784" y="0.10575062"/>
+        <viz:color r="40" g="179" b="106"/>
+      </node>
+      <node id="N_S.cellulase" label="N_S.cellulase">
+        <attvalues>
+          <attvalue for="att1" value="10.0"/>
+          <attvalue for="weighted indegree" value="10.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="10.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.10945143" y="0.35377768"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="N_S.DD3" label="N_S.DD3">
+        <attvalues>
+          <attvalue for="att1" value="5.0"/>
+          <attvalue for="weighted indegree" value="5.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="5.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.36879835" y="0.70749265"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="N_NSDg.early" label="N_NSDg.early">
+        <attvalues>
+          <attvalue for="att1" value="4.0"/>
+          <attvalue for="weighted indegree" value="4.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="4.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.7446676" y="0.60751414"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="N_gland.d.HE" label="N_gland.d.HE">
+        <attvalues>
+          <attvalue for="att1" value="5.0"/>
+          <attvalue for="weighted indegree" value="5.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="5.0"/>
+          <attvalue for="modularity_class" value="2"/>
+        </attvalues>
+        <viz:position x="0.93362033" y="0.40065843"/>
+        <viz:color r="40" g="179" b="106"/>
+      </node>
+      <node id="N_gland.d.SVEP.2" label="N_gland.d.SVEP.2">
+        <attvalues>
+          <attvalue for="att1" value="1.0"/>
+          <attvalue for="weighted indegree" value="1.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="1.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.36380258" y="0.9014047"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="N_gland.d.SoxA" label="N_gland.d.SoxA">
+        <attvalues>
+          <attvalue for="att1" value="3.0"/>
+          <attvalue for="weighted indegree" value="3.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="3.0"/>
+          <attvalue for="modularity_class" value="2"/>
+        </attvalues>
+        <viz:position x="0.6865111" y="0.52424103"/>
+        <viz:color r="40" g="179" b="106"/>
+      </node>
+      <node id="N_gland.d.CPB2.1" label="N_gland.d.CPB2.1">
+        <attvalues>
+          <attvalue for="att1" value="2.0"/>
+          <attvalue for="weighted indegree" value="2.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="2.0"/>
+          <attvalue for="modularity_class" value="2"/>
+        </attvalues>
+        <viz:position x="0.91727555" y="0.6971231"/>
+        <viz:color r="40" g="179" b="106"/>
+      </node>
+      <node id="N_S3" label="N_S3">
+        <attvalues>
+          <attvalue for="att1" value="2.0"/>
+          <attvalue for="weighted indegree" value="2.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="2.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.7950638" y="0.79996824"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="N_Ne....PRDM14d" label="N_Ne....PRDM14d">
+        <attvalues>
+          <attvalue for="att1" value="92.0"/>
+          <attvalue for="weighted indegree" value="6.0"/>
+          <attvalue for="weighted outdegree" value="86.0"/>
+          <attvalue for="weighted degree" value="92.0"/>
+          <attvalue for="modularity_class" value="3"/>
+        </attvalues>
+        <viz:position x="0.3780633" y="0.17087403"/>
+        <viz:color r="255" g="93" b="133"/>
+      </node>
+      <node id="N_N....barh2" label="N_N....barh2">
+        <attvalues>
+          <attvalue for="att1" value="9.0"/>
+          <attvalue for="weighted indegree" value="6.0"/>
+          <attvalue for="weighted outdegree" value="3.0"/>
+          <attvalue for="weighted degree" value="9.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.06870996" y="0.4565992"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="N_N....fez.1" label="N_N....fez.1">
+        <attvalues>
+          <attvalue for="att1" value="21.0"/>
+          <attvalue for="weighted indegree" value="6.0"/>
+          <attvalue for="weighted outdegree" value="15.0"/>
+          <attvalue for="weighted degree" value="21.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.20263202" y="0.62413585"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="N_N....fez.2" label="N_N....fez.2">
+        <attvalues>
+          <attvalue for="att1" value="12.0"/>
+          <attvalue for="weighted indegree" value="5.0"/>
+          <attvalue for="weighted outdegree" value="7.0"/>
+          <attvalue for="weighted degree" value="12.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.22129084" y="0.5222341"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="N_N....NOT2" label="N_N....NOT2">
+        <attvalues>
+          <attvalue for="att1" value="13.0"/>
+          <attvalue for="weighted indegree" value="12.0"/>
+          <attvalue for="weighted outdegree" value="1.0"/>
+          <attvalue for="weighted degree" value="13.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.5191228" y="0.44356576"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="N_N....runx" label="N_N....runx">
+        <attvalues>
+          <attvalue for="att1" value="7.0"/>
+          <attvalue for="weighted indegree" value="7.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="7.0"/>
+          <attvalue for="modularity_class" value="3"/>
+        </attvalues>
+        <viz:position x="0.4455916" y="0.23700964"/>
+        <viz:color r="255" g="93" b="133"/>
+      </node>
+      <node id="N_TR.N....Tbx20a" label="N_TR.N....Tbx20a">
+        <attvalues>
+          <attvalue for="att1" value="3.0"/>
+          <attvalue for="weighted indegree" value="3.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="3.0"/>
+          <attvalue for="modularity_class" value="3"/>
+        </attvalues>
+        <viz:position x="0.21168824" y="0.23716043"/>
+        <viz:color r="255" g="93" b="133"/>
+      </node>
+      <node id="N_TR.N....Tbx20b" label="N_TR.N....Tbx20b">
+        <attvalues>
+          <attvalue for="att1" value="11.0"/>
+          <attvalue for="weighted indegree" value="11.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="11.0"/>
+          <attvalue for="modularity_class" value="2"/>
+        </attvalues>
+        <viz:position x="0.63823444" y="0.17046978"/>
+        <viz:color r="40" g="179" b="106"/>
+      </node>
+      <node id="N_immune" label="N_immune">
+        <attvalues>
+          <attvalue for="att1" value="13.0"/>
+          <attvalue for="weighted indegree" value="6.0"/>
+          <attvalue for="weighted outdegree" value="7.0"/>
+          <attvalue for="weighted degree" value="13.0"/>
+          <attvalue for="modularity_class" value="0"/>
+        </attvalues>
+        <viz:position x="0.45433694" y="0.40133652"/>
+        <viz:color r="249" g="119" b="67"/>
+      </node>
+      <node id="gland.mucous.1" label="gland.mucous.1">
+        <attvalues>
+          <attvalue for="att1" value="3.0"/>
+          <attvalue for="weighted indegree" value="3.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="3.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.16618817" y="0.82165575"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="gland.mucous.2" label="gland.mucous.2">
+        <attvalues>
+          <attvalue for="att1" value="3.0"/>
+          <attvalue for="weighted indegree" value="3.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="3.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.5027544" y="0.6747299"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="gland.mucous.ERG" label="gland.mucous.ERG">
+        <attvalues>
+          <attvalue for="att1" value="4.0"/>
+          <attvalue for="weighted indegree" value="4.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="4.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.5623067" y="0.5914106"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="gland.mucous.5HT" label="gland.mucous.5HT">
+        <attvalues>
+          <attvalue for="att1" value="7.0"/>
+          <attvalue for="weighted indegree" value="7.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="7.0"/>
+          <attvalue for="modularity_class" value="2"/>
+        </attvalues>
+        <viz:position x="0.6895783" y="0.4595003"/>
+        <viz:color r="40" g="179" b="106"/>
+      </node>
+      <node id="gland.mucous.HSP" label="gland.mucous.HSP">
+        <attvalues>
+          <attvalue for="att1" value="2.0"/>
+          <attvalue for="weighted indegree" value="2.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="2.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.40850672" y="0.8673369"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="gland.mucous.aboral" label="gland.mucous.aboral">
+        <attvalues>
+          <attvalue for="att1" value="5.0"/>
+          <attvalue for="weighted indegree" value="5.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="5.0"/>
+          <attvalue for="modularity_class" value="3"/>
+        </attvalues>
+        <viz:position x="0.49899796" y="0.072143674"/>
+        <viz:color r="255" g="93" b="133"/>
+      </node>
+      <node id="immune.1" label="immune.1">
+        <attvalues>
+          <attvalue for="att1" value="2.0"/>
+          <attvalue for="weighted indegree" value="2.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="2.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.7847803" y="0.7369835"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="immune.2" label="immune.2">
+        <attvalues>
+          <attvalue for="att1" value="1.0"/>
+          <attvalue for="weighted indegree" value="1.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="1.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.8935292" y="0.86351925"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="immune.3" label="immune.3">
+        <attvalues>
+          <attvalue for="att1" value="3.0"/>
+          <attvalue for="weighted indegree" value="3.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="3.0"/>
+          <attvalue for="modularity_class" value="2"/>
+        </attvalues>
+        <viz:position x="1.0" y="0.5233297"/>
+        <viz:color r="40" g="179" b="106"/>
+      </node>
+      <node id="immune.oral" label="immune.oral">
+        <attvalues>
+          <attvalue for="att1" value="4.0"/>
+          <attvalue for="weighted indegree" value="4.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="4.0"/>
+          <attvalue for="modularity_class" value="2"/>
+        </attvalues>
+        <viz:position x="0.76382697" y="0.04239001"/>
+        <viz:color r="40" g="179" b="106"/>
+      </node>
+      <node id="immune.NPC" label="immune.NPC">
+        <attvalues>
+          <attvalue for="att1" value="5.0"/>
+          <attvalue for="weighted indegree" value="5.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="5.0"/>
+          <attvalue for="modularity_class" value="0"/>
+        </attvalues>
+        <viz:position x="0.1845076" y="0.5563887"/>
+        <viz:color r="249" g="119" b="67"/>
+      </node>
+      <node id="immune.pSC" label="immune.pSC">
+        <attvalues>
+          <attvalue for="att1" value="1.0"/>
+          <attvalue for="weighted indegree" value="1.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="1.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.23308314" y="0.85450387"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="cnidocyte.mature" label="cnidocyte.mature">
+        <attvalues>
+          <attvalue for="att1" value="5.0"/>
+          <attvalue for="weighted indegree" value="5.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="5.0"/>
+          <attvalue for="modularity_class" value="3"/>
+        </attvalues>
+        <viz:position x="0.3944791" y="0.269636"/>
+        <viz:color r="255" g="93" b="133"/>
+      </node>
+      <node id="cnidocyte.maturing.1" label="cnidocyte.maturing.1">
+        <attvalues>
+          <attvalue for="att1" value="5.0"/>
+          <attvalue for="weighted indegree" value="5.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="5.0"/>
+          <attvalue for="modularity_class" value="3"/>
+        </attvalues>
+        <viz:position x="0.38461977" y="0.33569103"/>
+        <viz:color r="255" g="93" b="133"/>
+      </node>
+      <node id="cnidocyte.gast.1" label="cnidocyte.gast.1">
+        <attvalues>
+          <attvalue for="att1" value="1.0"/>
+          <attvalue for="weighted indegree" value="1.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="1.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.5529398" y="0.9329972"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="cnidocyte.pSC" label="cnidocyte.pSC">
+        <attvalues>
+          <attvalue for="att1" value="1.0"/>
+          <attvalue for="weighted indegree" value="1.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="1.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.41790983" y="0.9664614"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="cnidocyte.nep.8" label="cnidocyte.nep.8">
+        <attvalues>
+          <attvalue for="att1" value="2.0"/>
+          <attvalue for="weighted indegree" value="2.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="2.0"/>
+          <attvalue for="modularity_class" value="3"/>
+        </attvalues>
+        <viz:position x="0.17396957" y="0.38825154"/>
+        <viz:color r="255" g="93" b="133"/>
+      </node>
+      <node id="retractor.muscle.RM.1" label="retractor.muscle.RM.1">
+        <attvalues>
+          <attvalue for="att1" value="1.0"/>
+          <attvalue for="weighted indegree" value="1.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="1.0"/>
+          <attvalue for="modularity_class" value="3"/>
+        </attvalues>
+        <viz:position x="0.37284428" y="0.030577812"/>
+        <viz:color r="255" g="93" b="133"/>
+      </node>
+      <node id="retractor.muscle.RM.2" label="retractor.muscle.RM.2">
+        <attvalues>
+          <attvalue for="att1" value="3.0"/>
+          <attvalue for="weighted indegree" value="3.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="3.0"/>
+          <attvalue for="modularity_class" value="3"/>
+        </attvalues>
+        <viz:position x="0.060204986" y="0.20651808"/>
+        <viz:color r="255" g="93" b="133"/>
+      </node>
+      <node id="retractor.muscle.TR.1" label="retractor.muscle.TR.1">
+        <attvalues>
+          <attvalue for="att1" value="2.0"/>
+          <attvalue for="weighted indegree" value="2.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="2.0"/>
+          <attvalue for="modularity_class" value="3"/>
+        </attvalues>
+        <viz:position x="0.0" y="0.23971476"/>
+        <viz:color r="255" g="93" b="133"/>
+      </node>
+      <node id="retractor.muscle.TR.2" label="retractor.muscle.TR.2">
+        <attvalues>
+          <attvalue for="att1" value="3.0"/>
+          <attvalue for="weighted indegree" value="3.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="3.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.49605894" y="0.7375742"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="retractor.muscle.MR.1" label="retractor.muscle.MR.1">
+        <attvalues>
+          <attvalue for="att1" value="6.0"/>
+          <attvalue for="weighted indegree" value="6.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="6.0"/>
+          <attvalue for="modularity_class" value="3"/>
+        </attvalues>
+        <viz:position x="0.6369607" y="0.39747384"/>
+        <viz:color r="255" g="93" b="133"/>
+      </node>
+      <node id="retractor.muscle.MR.2" label="retractor.muscle.MR.2">
+        <attvalues>
+          <attvalue for="att1" value="1.0"/>
+          <attvalue for="weighted indegree" value="1.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="1.0"/>
+          <attvalue for="modularity_class" value="3"/>
+        </attvalues>
+        <viz:position x="0.26231593" y="0.057175368"/>
+        <viz:color r="255" g="93" b="133"/>
+      </node>
+      <node id="endomesoderm.embryonic.1" label="endomesoderm.embryonic.1">
+        <attvalues>
+          <attvalue for="att1" value="12.0"/>
+          <attvalue for="weighted indegree" value="12.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="12.0"/>
+          <attvalue for="modularity_class" value="0"/>
+        </attvalues>
+        <viz:position x="0.23979558" y="0.42354497"/>
+        <viz:color r="249" g="119" b="67"/>
+      </node>
+      <node id="gastrodermis.1" label="gastrodermis.1">
+        <attvalues>
+          <attvalue for="att1" value="2.0"/>
+          <attvalue for="weighted indegree" value="2.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="2.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.605767" y="0.80025977"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="gastrodermis.2" label="gastrodermis.2">
+        <attvalues>
+          <attvalue for="att1" value="4.0"/>
+          <attvalue for="weighted indegree" value="4.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="4.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.8613226" y="0.53944284"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="gastrodermis.3" label="gastrodermis.3">
+        <attvalues>
+          <attvalue for="att1" value="4.0"/>
+          <attvalue for="weighted indegree" value="4.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="4.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.5867488" y="0.55734783"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="gastrodermis.pharyngeal" label="gastrodermis.pharyngeal">
+        <attvalues>
+          <attvalue for="att1" value="1.0"/>
+          <attvalue for="weighted indegree" value="1.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="1.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.59712344" y="1.0"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="gastrodermis.histone" label="gastrodermis.histone">
+        <attvalues>
+          <attvalue for="att1" value="2.0"/>
+          <attvalue for="weighted indegree" value="2.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="2.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.25829038" y="0.78879493"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="gastrodermis.FoxA" label="gastrodermis.FoxA">
+        <attvalues>
+          <attvalue for="att1" value="4.0"/>
+          <attvalue for="weighted indegree" value="4.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="4.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.93023497" y="0.64020795"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="gastrodermis.neural" label="gastrodermis.neural">
+        <attvalues>
+          <attvalue for="att1" value="6.0"/>
+          <attvalue for="weighted indegree" value="6.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="6.0"/>
+          <attvalue for="modularity_class" value="0"/>
+        </attvalues>
+        <viz:position x="0.610574" y="0.367921"/>
+        <viz:color r="249" g="119" b="67"/>
+      </node>
+      <node id="gastrodermis.immune" label="gastrodermis.immune">
+        <attvalues>
+          <attvalue for="att1" value="7.0"/>
+          <attvalue for="weighted indegree" value="4.0"/>
+          <attvalue for="weighted outdegree" value="3.0"/>
+          <attvalue for="weighted degree" value="7.0"/>
+          <attvalue for="modularity_class" value="0"/>
+        </attvalues>
+        <viz:position x="0.24183801" y="0.48924246"/>
+        <viz:color r="249" g="119" b="67"/>
+      </node>
+      <node id="pharyngeal.ect.1" label="pharyngeal.ect.1">
+        <attvalues>
+          <attvalue for="att1" value="4.0"/>
+          <attvalue for="weighted indegree" value="4.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="4.0"/>
+          <attvalue for="modularity_class" value="2"/>
+        </attvalues>
+        <viz:position x="0.91250366" y="0.26839536"/>
+        <viz:color r="40" g="179" b="106"/>
+      </node>
+      <node id="pharyngeal.ect.SoxC" label="pharyngeal.ect.SoxC">
+        <attvalues>
+          <attvalue for="att1" value="4.0"/>
+          <attvalue for="weighted indegree" value="4.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="4.0"/>
+          <attvalue for="modularity_class" value="2"/>
+        </attvalues>
+        <viz:position x="0.85076183" y="0.19933933"/>
+        <viz:color r="40" g="179" b="106"/>
+      </node>
+      <node id="pharyngeal.ect.Brachyury" label="pharyngeal.ect.Brachyury">
+        <attvalues>
+          <attvalue for="att1" value="4.0"/>
+          <attvalue for="weighted indegree" value="4.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="4.0"/>
+          <attvalue for="modularity_class" value="2"/>
+        </attvalues>
+        <viz:position x="0.78960896" y="0.13755488"/>
+        <viz:color r="40" g="179" b="106"/>
+      </node>
+      <node id="pharyngeal.ect.Wnt1" label="pharyngeal.ect.Wnt1">
+        <attvalues>
+          <attvalue for="att1" value="3.0"/>
+          <attvalue for="weighted indegree" value="3.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="3.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.68697155" y="0.7073148"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="pharyngeal.ect.DLGP5" label="pharyngeal.ect.DLGP5">
+        <attvalues>
+          <attvalue for="att1" value="3.0"/>
+          <attvalue for="weighted indegree" value="3.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="3.0"/>
+          <attvalue for="modularity_class" value="2"/>
+        </attvalues>
+        <viz:position x="0.9819094" y="0.45934883"/>
+        <viz:color r="40" g="179" b="106"/>
+      </node>
+      <node id="pharyngeal.ect.Ets" label="pharyngeal.ect.Ets">
+        <attvalues>
+          <attvalue for="att1" value="3.0"/>
+          <attvalue for="weighted indegree" value="3.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="3.0"/>
+          <attvalue for="modularity_class" value="2"/>
+        </attvalues>
+        <viz:position x="0.87713593" y="0.49314868"/>
+        <viz:color r="40" g="179" b="106"/>
+      </node>
+      <node id="pharyngeal.ect.ciliated" label="pharyngeal.ect.ciliated">
+        <attvalues>
+          <attvalue for="att1" value="4.0"/>
+          <attvalue for="weighted indegree" value="4.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="4.0"/>
+          <attvalue for="modularity_class" value="2"/>
+        </attvalues>
+        <viz:position x="0.77173007" y="0.23460399"/>
+        <viz:color r="40" g="179" b="106"/>
+      </node>
+      <node id="ectoderm.embryonic.1" label="ectoderm.embryonic.1">
+        <attvalues>
+          <attvalue for="att1" value="5.0"/>
+          <attvalue for="weighted indegree" value="5.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="5.0"/>
+          <attvalue for="modularity_class" value="2"/>
+        </attvalues>
+        <viz:position x="0.81477016" y="0.30094704"/>
+        <viz:color r="40" g="179" b="106"/>
+      </node>
+      <node id="ectoderm.embryonic.aboral" label="ectoderm.embryonic.aboral">
+        <attvalues>
+          <attvalue for="att1" value="2.0"/>
+          <attvalue for="weighted indegree" value="2.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="2.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.7736215" y="0.8332064"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="ectoderm.embryonic.oral" label="ectoderm.embryonic.oral">
+        <attvalues>
+          <attvalue for="att1" value="4.0"/>
+          <attvalue for="weighted indegree" value="4.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="4.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.8110349" y="0.5731414"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="epithelia.ect.1" label="epithelia.ect.1">
+        <attvalues>
+          <attvalue for="att1" value="3.0"/>
+          <attvalue for="weighted indegree" value="3.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="3.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.42755023" y="0.5254379"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="epithelia.ect.2" label="epithelia.ect.2">
+        <attvalues>
+          <attvalue for="att1" value="2.0"/>
+          <attvalue for="weighted indegree" value="2.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="2.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.3003717" y="0.755885"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="epithelia.ect.mitotic" label="epithelia.ect.mitotic">
+        <attvalues>
+          <attvalue for="att1" value="2.0"/>
+          <attvalue for="weighted indegree" value="2.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="2.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.4429814" y="0.8329257"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="epithelia.ect.aboral" label="epithelia.ect.aboral">
+        <attvalues>
+          <attvalue for="att1" value="2.0"/>
+          <attvalue for="weighted indegree" value="2.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="2.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.48169094" y="0.7677661"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="epithelia.ect.ciliated" label="epithelia.ect.ciliated">
+        <attvalues>
+          <attvalue for="att1" value="3.0"/>
+          <attvalue for="weighted indegree" value="3.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="3.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.36590242" y="0.5579855"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="epithelia.ect.klf5" label="epithelia.ect.klf5">
+        <attvalues>
+          <attvalue for="att1" value="2.0"/>
+          <attvalue for="weighted indegree" value="2.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="2.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:position x="0.6773024" y="0.76709616"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="epithelia.ect.OtxA" label="epithelia.ect.OtxA">
+        <attvalues>
+          <attvalue for="att1" value="4.0"/>
+          <attvalue for="weighted indegree" value="4.0"/>
+          <attvalue for="weighted outdegree" value="0.0"/>
+          <attvalue for="weighted degree" value="4.0"/>
+          <attvalue for="modularity_class" value="3"/>
+        </attvalues>
+        <viz:position x="0.287065" y="0.20436473"/>
+        <viz:color r="255" g="93" b="133"/>
+      </node>
+    </nodes>
+    <edges>
+      <edge id="0" source="N_N....evx" target="N_Ne....Nkx2.2">
+        <viz:color r="68" g="170" b="153"/>
+        <attvalues>
+          <attvalue for="att1" value="4.257692"/>
+          <attvalue for="att2" value="HIRa | NV2.8166"/>
+        </attvalues>
+      </edge>
+      <edge id="1" source="N_N....evx" target="N_N....emx3">
+        <viz:color r="68" g="170" b="153"/>
+        <attvalues>
+          <attvalue for="att1" value="3.1414518"/>
+          <attvalue for="att2" value="HIRa | NV2.8166"/>
+        </attvalues>
+      </edge>
+      <edge id="2" source="N_N....evx" target="N_N....GFI1B.prdm">
+        <viz:color r="68" g="170" b="153"/>
+        <attvalues>
+          <attvalue for="att1" value="4.1779823"/>
+          <attvalue for="att2" value="HIRa | NV2.8166"/>
+        </attvalues>
+      </edge>
+      <edge id="3" source="N_N....evx" target="N_S2.tll.4">
+        <viz:color r="68" g="170" b="153"/>
+        <attvalues>
+          <attvalue for="att1" value="3.4122336"/>
+          <attvalue for="att2" value="HIRa | NV2.8166"/>
+        </attvalues>
+      </edge>
+      <edge id="4" source="N_N....evx" target="retractor.muscle.TR.1">
+        <viz:color r="68" g="170" b="153"/>
+        <attvalues>
+          <attvalue for="att1" value="3.9392893"/>
+          <attvalue for="att2" value="HIRa | NV2.8166"/>
+        </attvalues>
+      </edge>
+      <edge id="5" source="N_Ne.....otx.early" target="gland.mucous.aboral">
+        <viz:color r="51" g="34" b="136"/>
+        <attvalues>
+          <attvalue for="att1" value="5.4733152"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="6" source="N_Ne....Nkx2.2" target="gland.mucous.aboral">
+        <viz:color r="51" g="34" b="136"/>
+        <attvalues>
+          <attvalue for="att1" value="3.7517862"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="7" source="N_Ns....Otp" target="gland.mucous.aboral">
+        <viz:color r="51" g="34" b="136"/>
+        <attvalues>
+          <attvalue for="att1" value="6.063869"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="8" source="N_Ne.....otx.early" target="N_Ne....Nkx2.2" weight="3.0">
+        <viz:color r="252" g="78" b="42"/>
+        <attvalues>
+          <attvalue for="att1" value="3.044461"/>
+          <attvalue for="att2" value="QWa | NV2.4017"/>
+        </attvalues>
+      </edge>
+      <edge id="9" source="N_Ne.....otx.early" target="N_Ne....pax2">
+        <viz:color r="221" g="204" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="5.857451"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="10" source="N_Ne.....otx.early" target="N_N....Nk1.early" weight="4.0">
+        <viz:color r="189" g="0" b="38"/>
+        <attvalues>
+          <attvalue for="att1" value="3.165882"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="11" source="N_Ne.....otx.early" target="N_N....Ap2.early" weight="3.0">
+        <viz:color r="189" g="0" b="38"/>
+        <attvalues>
+          <attvalue for="att1" value="4.2863226"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="12" source="N_Ne.....otx.early" target="N_S.AGRIN.ao">
+        <viz:color r="221" g="204" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="6.1331153"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="13" source="N_Ne.....otx.early" target="N_Ne....PRDM14d">
+        <viz:color r="221" g="204" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.5790248"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="14" source="N_Ne.....otx.early" target="N_TR.N....Tbx20b" weight="3.0">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="5.9080496"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="15" source="N_Ne.....otx.early" target="ectoderm.embryonic.1">
+        <viz:color r="221" g="204" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="4.5371647"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="16" source="N_Ne....Nkx2.2" target="N_Ne....Nkx2.2">
+        <viz:color r="221" g="204" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.4206467"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="17" source="N_Ne....Nkx2.2" target="N_Ne....pax2">
+        <viz:color r="221" g="204" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="4.015099"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="18" source="N_Ne....Nkx2.2" target="N_N....Ap2.early" weight="2.0">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.9541392"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="19" source="N_Ne....Nkx2.2" target="N_S.AGRIN.ao">
+        <viz:color r="221" g="204" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="4.204058"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="20" source="N_Ne....Nkx2.2" target="N_TR.N....Tbx20b" weight="3.0">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="4.049783"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="21" source="N_Ne....Nkx2.2" target="ectoderm.embryonic.1">
+        <viz:color r="221" g="204" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.1100843"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="22" source="N_Ns....Gsx" target="N_S.AGRIN.ao">
+        <viz:color r="221" g="204" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.068433"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="23" source="N_Ns....Gsx" target="N_TR.N....Tbx20b">
+        <viz:color r="221" g="204" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.273828"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="24" source="N_Ns....Otp" target="N_Ne....Nkx2.2" weight="2.0">
+        <viz:color r="153" g="153" b="51"/>
+        <attvalues>
+          <attvalue for="att1" value="3.84259"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="25" source="N_Ns....Otp" target="N_Ne....pax2">
+        <viz:color r="221" g="204" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="6.489452"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="26" source="N_Ns....Otp" target="N_N....Nk1.early" weight="3.0">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="4.5104384"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="27" source="N_Ns....Otp" target="N_N....Ap2.early" weight="2.0">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="6.3909245"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="28" source="N_Ns....Otp" target="N_Ns....foxQ2d.early">
+        <viz:color r="221" g="204" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.1192393"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="29" source="N_Ns....Otp" target="N_S.AGRIN.ao">
+        <viz:color r="221" g="204" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="6.794859"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="30" source="N_Ns....Otp" target="N_Ne....PRDM14d">
+        <viz:color r="221" g="204" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.9651904"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="31" source="N_Ns....Otp" target="N_N....runx">
+        <viz:color r="221" g="204" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.2766335"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="32" source="N_Ns....Otp" target="N_TR.N....Tbx20b" weight="3.0">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="6.54551"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="33" source="N_Ns....Otp" target="N_immune" weight="2.0">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.3784394"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="34" source="N_Ns....Otp" target="ectoderm.embryonic.1">
+        <viz:color r="221" g="204" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="5.0267105"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="35" source="N_Ne.....otx.early" target="N_Ne.....pit.1">
+        <viz:color r="153" g="153" b="51"/>
+        <attvalues>
+          <attvalue for="att1" value="6.743204"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="37" source="N_Ne.....otx.early" target="N_Ne....otx.Six1.2">
+        <viz:color r="153" g="153" b="51"/>
+        <attvalues>
+          <attvalue for="att1" value="4.3445845"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="39" source="N_Ne.....otx.early" target="N_Ns....AshA.NOT">
+        <viz:color r="153" g="153" b="51"/>
+        <attvalues>
+          <attvalue for="att1" value="4.366664"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="40" source="N_Ne.....otx.early" target="N_Ns....foxQ2d" weight="2.0">
+        <viz:color r="189" g="0" b="38"/>
+        <attvalues>
+          <attvalue for="att1" value="5.86142"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="41" source="N_Ne.....otx.early" target="N_S.klf5.tsp">
+        <viz:color r="153" g="153" b="51"/>
+        <attvalues>
+          <attvalue for="att1" value="4.022482"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="42" source="N_Ne.....otx.early" target="N_S2.tll.2">
+        <viz:color r="153" g="153" b="51"/>
+        <attvalues>
+          <attvalue for="att1" value="3.3548338"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="43" source="N_Ne.....otx.early" target="N_S2.tll.3">
+        <viz:color r="153" g="153" b="51"/>
+        <attvalues>
+          <attvalue for="att1" value="4.8376503"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="44" source="N_Ne.....otx.early" target="N_S.cellulase">
+        <viz:color r="153" g="153" b="51"/>
+        <attvalues>
+          <attvalue for="att1" value="6.2541866"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="45" source="N_Ne.....otx.early" target="N_NSDg.early">
+        <viz:color r="153" g="153" b="51"/>
+        <attvalues>
+          <attvalue for="att1" value="3.3055682"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="46" source="N_Ne.....otx.early" target="N_gland.d.HE">
+        <viz:color r="153" g="153" b="51"/>
+        <attvalues>
+          <attvalue for="att1" value="5.8033705"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="47" source="N_Ne.....otx.early" target="N_gland.d.SoxA">
+        <viz:color r="153" g="153" b="51"/>
+        <attvalues>
+          <attvalue for="att1" value="4.094144"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="48" source="N_Ne.....otx.early" target="N_N....fez.1">
+        <viz:color r="153" g="153" b="51"/>
+        <attvalues>
+          <attvalue for="att1" value="3.2771456"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="49" source="N_Ne.....otx.early" target="N_N....NOT2" weight="2.0">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.5174842"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="51" source="N_Ne.....otx.early" target="gland.mucous.5HT" weight="2.0">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.4263074"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="52" source="N_Ne....Nkx2.2" target="N_Ne.....pit.1">
+        <viz:color r="153" g="153" b="51"/>
+        <attvalues>
+          <attvalue for="att1" value="4.6222553"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="53" source="N_Ne....Nkx2.2" target="N_N....Nk1.early">
+        <viz:color r="153" g="153" b="51"/>
+        <attvalues>
+          <attvalue for="att1" value="3.0998955"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="54" source="N_Ne....Nkx2.2" target="N_S2.tll.3">
+        <viz:color r="153" g="153" b="51"/>
+        <attvalues>
+          <attvalue for="att1" value="3.3160577"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="55" source="N_Ne....Nkx2.2" target="N_S.cellulase">
+        <viz:color r="153" g="153" b="51"/>
+        <attvalues>
+          <attvalue for="att1" value="4.2870493"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="56" source="N_Ne....Nkx2.2" target="N_gland.d.HE">
+        <viz:color r="153" g="153" b="51"/>
+        <attvalues>
+          <attvalue for="att1" value="3.9780288"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="57" source="N_Ne....Nkx2.2" target="N_N....NOT2">
+        <viz:color r="153" g="153" b="51"/>
+        <attvalues>
+          <attvalue for="att1" value="3.8537993"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="59" source="N_Ne....Nkx2.2" target="gland.mucous.5HT">
+        <viz:color r="153" g="153" b="51"/>
+        <attvalues>
+          <attvalue for="att1" value="3.1057537"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="60" source="N_Ns....Gsx" target="N_Ne.....pit.1">
+        <viz:color r="153" g="153" b="51"/>
+        <attvalues>
+          <attvalue for="att1" value="3.3736644"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="61" source="N_Ns....Gsx" target="N_S.cellulase">
+        <viz:color r="153" g="153" b="51"/>
+        <attvalues>
+          <attvalue for="att1" value="3.129006"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="62" source="N_Ns....Otp" target="N_Ne.....pit.1" weight="2.0">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.231378"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="64" source="N_Ns....Otp" target="N_Ne....otx.Six1.2">
+        <viz:color r="153" g="153" b="51"/>
+        <attvalues>
+          <attvalue for="att1" value="4.8133516"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="66" source="N_Ns....Otp" target="N_Ns....AshA.NOT" weight="2.0">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.0997145"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="67" source="N_Ns....Otp" target="N_Ns....foxQ2d">
+        <viz:color r="153" g="153" b="51"/>
+        <attvalues>
+          <attvalue for="att1" value="3.5683851"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="68" source="N_Ns....Otp" target="N_S.klf5.tsp">
+        <viz:color r="153" g="153" b="51"/>
+        <attvalues>
+          <attvalue for="att1" value="4.4564953"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="69" source="N_Ns....Otp" target="N_S2.tll.2">
+        <viz:color r="153" g="153" b="51"/>
+        <attvalues>
+          <attvalue for="att1" value="3.71681"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="70" source="N_Ns....Otp" target="N_S2.tll.3">
+        <viz:color r="153" g="153" b="51"/>
+        <attvalues>
+          <attvalue for="att1" value="5.359617"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="71" source="N_Ns....Otp" target="N_S.cellulase">
+        <viz:color r="153" g="153" b="51"/>
+        <attvalues>
+          <attvalue for="att1" value="6.928994"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="72" source="N_Ns....Otp" target="N_NSDg.early">
+        <viz:color r="153" g="153" b="51"/>
+        <attvalues>
+          <attvalue for="att1" value="3.6622288"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="73" source="N_Ns....Otp" target="N_gland.d.HE">
+        <viz:color r="153" g="153" b="51"/>
+        <attvalues>
+          <attvalue for="att1" value="6.429536"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="74" source="N_Ns....Otp" target="N_gland.d.SoxA">
+        <viz:color r="153" g="153" b="51"/>
+        <attvalues>
+          <attvalue for="att1" value="4.5358896"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="75" source="N_Ns....Otp" target="N_N....fez.1">
+        <viz:color r="153" g="153" b="51"/>
+        <attvalues>
+          <attvalue for="att1" value="3.6307395"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="76" source="N_Ns....Otp" target="N_N....NOT2" weight="2.0">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.8970098"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="78" source="N_Ns....Otp" target="gland.mucous.2">
+        <viz:color r="153" g="153" b="51"/>
+        <attvalues>
+          <attvalue for="att1" value="3.048653"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="79" source="N_Ns....Otp" target="gland.mucous.5HT" weight="2.0">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.7959952"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="80" source="N_Ne.....otx.early" target="pSC.NPC.1">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.196445"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="83" source="N_Ne.....otx.early" target="N_N....GFI1B.nk25" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="5.422039"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="84" source="N_Ne.....otx.early" target="N_S.DD3">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.0152316"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="87" source="N_Ne.....otx.early" target="N_immune">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.0494168"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="88" source="N_Ne.....otx.early" target="gland.mucous.ERG">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.72015"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="90" source="N_Ne.....otx.early" target="immune.3">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.180492"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="91" source="N_Ne.....otx.early" target="immune.oral">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="7.0909276"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="92" source="N_Ne.....otx.early" target="retractor.muscle.MR.1">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.3258078"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="93" source="N_Ne.....otx.early" target="endomesoderm.embryonic.1">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="15.794743"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="94" source="N_Ne.....otx.early" target="gastrodermis.2">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.6659102"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="95" source="N_Ne.....otx.early" target="gastrodermis.3">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.93033"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="96" source="N_Ne.....otx.early" target="gastrodermis.FoxA">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.9384027"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="97" source="N_Ne.....otx.early" target="pharyngeal.ect.1">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="4.546684"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="98" source="N_Ne.....otx.early" target="pharyngeal.ect.SoxC">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="4.7237716"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="99" source="N_Ne.....otx.early" target="pharyngeal.ect.Brachyury">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="4.443305"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="100" source="N_Ne.....otx.early" target="pharyngeal.ect.DLGP5">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.9315703"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="101" source="N_Ne.....otx.early" target="pharyngeal.ect.Ets">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="4.2081933"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="102" source="N_Ne.....otx.early" target="pharyngeal.ect.ciliated">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="4.632589"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="103" source="N_Ne.....otx.early" target="ectoderm.embryonic.oral">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.5727222"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="104" source="N_Ne.....pit.1" target="endomesoderm.embryonic.1">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.077305"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="107" source="N_Ne....Nkx2.2" target="immune.oral">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="4.8606086"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="108" source="N_Ne....Nkx2.2" target="endomesoderm.embryonic.1">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="10.826801"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="109" source="N_Ne....Nkx2.2" target="pharyngeal.ect.1">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.1166093"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="110" source="N_Ne....Nkx2.2" target="pharyngeal.ect.SoxC">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.2379973"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="111" source="N_Ne....Nkx2.2" target="pharyngeal.ect.Brachyury">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.0457463"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="112" source="N_Ne....Nkx2.2" target="pharyngeal.ect.ciliated">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.1754947"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="113" source="N_N....Ap2.early" target="endomesoderm.embryonic.1">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="6.007739"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="114" source="N_N....vsx.1" target="endomesoderm.embryonic.1">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.3939648"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="115" source="N_Ns....Gsx" target="immune.oral">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.5476322"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="116" source="N_Ns....Gsx" target="endomesoderm.embryonic.1">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="7.9022017"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="117" source="N_Ns....Otp" target="pSC.Endo.NPC.2">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.1350062"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="118" source="N_Ns....Otp" target="pSC.NPC.1">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.5413315"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="122" source="N_Ns....Otp" target="N_N....GFI1B.nk25">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.7576137"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="124" source="N_Ns....Otp" target="N_Ns....Otp">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.021504"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="125" source="N_Ns....Otp" target="N_S.klf5.early.state">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.2180483"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="126" source="N_Ns....Otp" target="N_S.DD3">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.3405657"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="127" source="N_Ns....Otp" target="N_gland.d.CPB2.1">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.0487247"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="131" source="N_Ns....Otp" target="gland.mucous.ERG">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="4.1215425"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="133" source="N_Ns....Otp" target="immune.3">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.523657"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="134" source="N_Ns....Otp" target="immune.oral">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="7.8560166"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="135" source="N_Ns....Otp" target="retractor.muscle.MR.1">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.684652"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="136" source="N_Ns....Otp" target="endomesoderm.embryonic.1">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="17.498947"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="137" source="N_Ns....Otp" target="gastrodermis.2">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="4.0614505"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="138" source="N_Ns....Otp" target="gastrodermis.3">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="4.3544"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="139" source="N_Ns....Otp" target="gastrodermis.FoxA">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="4.363344"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="140" source="N_Ns....Otp" target="pharyngeal.ect.1">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="5.0372567"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="141" source="N_Ns....Otp" target="pharyngeal.ect.SoxC">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="5.233452"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="142" source="N_Ns....Otp" target="pharyngeal.ect.Brachyury">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="4.9227233"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="143" source="N_Ns....Otp" target="pharyngeal.ect.Wnt1">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.223114"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="144" source="N_Ns....Otp" target="pharyngeal.ect.DLGP5">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="4.3557744"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="145" source="N_Ns....Otp" target="pharyngeal.ect.Ets">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="4.662244"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="146" source="N_Ns....Otp" target="pharyngeal.ect.ciliated">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="5.132431"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="147" source="N_Ns....Otp" target="ectoderm.embryonic.oral">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.9582078"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="148" source="N_S.klf5.early.state" target="endomesoderm.embryonic.1">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="4.6767416"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="149" source="N_N....barh2" target="endomesoderm.embryonic.1">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="3.0235965"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="150" source="N_N....NOT2" target="endomesoderm.embryonic.1">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="4.9877334"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="151" source="gastrodermis.immune" target="endomesoderm.embryonic.1">
+        <viz:color r="204" g="102" b="119"/>
+        <attvalues>
+          <attvalue for="att1" value="4.1656814"/>
+          <attvalue for="att2" value="LRWa-1 | NV2.10311"/>
+        </attvalues>
+      </edge>
+      <edge id="152" source="N_Ne....PRDM14d" target="pSC.Mitotic.1">
+        <viz:color r="136" g="34" b="85"/>
+        <attvalues>
+          <attvalue for="att1" value="3.9967175"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="153" source="N_Ne....PRDM14d" target="N_N....Nk1.early" weight="5.0">
+        <viz:color r="213" g="94" b="0"/>
+        <attvalues>
+          <attvalue for="att1" value="3.5381935"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="154" source="N_Ne....PRDM14d" target="N_N....emx3">
+        <viz:color r="136" g="34" b="85"/>
+        <attvalues>
+          <attvalue for="att1" value="3.617287"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="155" source="N_Ne....PRDM14d" target="N_Ns....Gsx" weight="2.0">
+        <viz:color r="230" g="159" b="0"/>
+        <attvalues>
+          <attvalue for="att1" value="4.512187"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="156" source="N_Ne....PRDM14d" target="N_N....NOT2" weight="2.0">
+        <viz:color r="230" g="159" b="0"/>
+        <attvalues>
+          <attvalue for="att1" value="5.7046475"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="157" source="N_Ne....PRDM14d" target="N_N....runx" weight="5.0">
+        <viz:color r="255" g="255" b="204"/>
+        <attvalues>
+          <attvalue for="att1" value="3.3067265"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="158" source="N_Ne....PRDM14d" target="cnidocyte.mature" weight="3.0">
+        <viz:color r="255" g="237" b="160"/>
+        <attvalues>
+          <attvalue for="att1" value="4.0720067"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="159" source="N_Ne....PRDM14d" target="cnidocyte.maturing.1" weight="3.0">
+        <viz:color r="255" g="237" b="160"/>
+        <attvalues>
+          <attvalue for="att1" value="3.3889768"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="160" source="N_Ne....PRDM14d" target="gastrodermis.neural" weight="2.0">
+        <viz:color r="230" g="159" b="0"/>
+        <attvalues>
+          <attvalue for="att1" value="6.1333427"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="161" source="N_Ne....PRDM14d" target="epithelia.ect.1">
+        <viz:color r="136" g="34" b="85"/>
+        <attvalues>
+          <attvalue for="att1" value="3.0989988"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="162" source="N_Ne....PRDM14d" target="epithelia.ect.ciliated">
+        <viz:color r="136" g="34" b="85"/>
+        <attvalues>
+          <attvalue for="att1" value="3.1363983"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="163" source="N_Ne....PRDM14d" target="epithelia.ect.OtxA" weight="3.0">
+        <viz:color r="204" g="121" b="167"/>
+        <attvalues>
+          <attvalue for="att1" value="3.3838255"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="165" source="N_Ne....PRDM14d" target="N_S2.tll.2" weight="2.0">
+        <viz:color r="230" g="159" b="0"/>
+        <attvalues>
+          <attvalue for="att1" value="12.017328"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="166" source="N_Ne....PRDM14d" target="N_S.cellulase">
+        <viz:color r="170" g="68" b="153"/>
+        <attvalues>
+          <attvalue for="att1" value="9.7036"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="167" source="N_Ne....PRDM14d" target="N_Nl....Nkx3">
+        <viz:color r="221" g="221" b="221"/>
+        <attvalues>
+          <attvalue for="att1" value="14.883508"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="168" source="N_Ne....PRDM14d" target="N_Ne....Nkx2.2" weight="4.0">
+        <viz:color r="255" g="255" b="204"/>
+        <attvalues>
+          <attvalue for="att1" value="4.6992884"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="169" source="N_Ne....PRDM14d" target="N_Ne....otx.Six1.2" weight="4.0">
+        <viz:color r="255" g="255" b="204"/>
+        <attvalues>
+          <attvalue for="att1" value="4.0828266"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="171" source="N_Ne....PRDM14d" target="N_N....Ap2.early" weight="4.0">
+        <viz:color r="255" g="237" b="160"/>
+        <attvalues>
+          <attvalue for="att1" value="4.54788"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="172" source="N_Ne....PRDM14d" target="N_Ns....Otp" weight="2.0">
+        <viz:color r="230" g="159" b="0"/>
+        <attvalues>
+          <attvalue for="att1" value="3.1692448"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="173" source="N_Ne....PRDM14d" target="N_N....fez.1">
+        <viz:color r="221" g="221" b="221"/>
+        <attvalues>
+          <attvalue for="att1" value="5.4390945"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="174" source="N_Ne....PRDM14d" target="N_N....fez.2" weight="2.0">
+        <viz:color r="86" g="180" b="233"/>
+        <attvalues>
+          <attvalue for="att1" value="3.2523017"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="175" source="N_Ne....PRDM14d" target="N_Ne.....pit.1" weight="3.0">
+        <viz:color r="255" g="255" b="204"/>
+        <attvalues>
+          <attvalue for="att1" value="3.2592294"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="178" source="N_Ne....PRDM14d" target="N_Ne....pax2" weight="2.0">
+        <viz:color r="255" g="255" b="204"/>
+        <attvalues>
+          <attvalue for="att1" value="6.13172"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="184" source="N_Ne....PRDM14d" target="N_Ne....PRDM14d" weight="3.0">
+        <viz:color r="255" g="237" b="160"/>
+        <attvalues>
+          <attvalue for="att1" value="3.7961767"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="185" source="N_Ne....PRDM14d" target="N_N....barh2" weight="3.0">
+        <viz:color r="255" g="237" b="160"/>
+        <attvalues>
+          <attvalue for="att1" value="3.2732236"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="188" source="N_Ne....PRDM14d" target="N_immune">
+        <viz:color r="230" g="159" b="0"/>
+        <attvalues>
+          <attvalue for="att1" value="3.1958065"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="189" source="N_Ne....PRDM14d" target="gland.mucous.aboral" weight="2.0">
+        <viz:color r="255" g="237" b="160"/>
+        <attvalues>
+          <attvalue for="att1" value="4.075117"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="191" source="N_Ne....PRDM14d" target="cnidocyte.nep.8">
+        <viz:color r="230" g="159" b="0"/>
+        <attvalues>
+          <attvalue for="att1" value="3.1373017"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="193" source="N_Ne....PRDM14d" target="gastrodermis.immune">
+        <viz:color r="230" g="159" b="0"/>
+        <attvalues>
+          <attvalue for="att1" value="4.7080145"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="194" source="N_Ne....PRDM14d" target="N_Nl....rxraB" weight="2.0">
+        <viz:color r="255" g="237" b="160"/>
+        <attvalues>
+          <attvalue for="att1" value="7.6085987"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="195" source="N_Ne....PRDM14d" target="N_N....GFI1B.prdm" weight="3.0">
+        <viz:color r="255" g="237" b="160"/>
+        <attvalues>
+          <attvalue for="att1" value="6.4817395"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="196" source="N_Ne....PRDM14d" target="N_N.S2....rough.1">
+        <viz:color r="86" g="180" b="233"/>
+        <attvalues>
+          <attvalue for="att1" value="5.1107855"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="197" source="N_Ne....PRDM14d" target="N_Ns....foxQ2d">
+        <viz:color r="86" g="180" b="233"/>
+        <attvalues>
+          <attvalue for="att1" value="3.4165378"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="199" source="N_Ne....PRDM14d" target="N_TR.N....Tbx20a" weight="2.0">
+        <viz:color r="213" g="94" b="0"/>
+        <attvalues>
+          <attvalue for="att1" value="9.4328985"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="201" source="N_Ne....PRDM14d" target="N_TR.N....Tbx20b">
+        <viz:color r="240" g="228" b="66"/>
+        <attvalues>
+          <attvalue for="att1" value="4.7332525"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="203" source="N_Ne....PRDM14d" target="N_N....GFI1B.nk25">
+        <viz:color r="0" g="114" b="178"/>
+        <attvalues>
+          <attvalue for="att1" value="7.0921946"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="205" source="N_Ne....PRDM14d" target="N_Ne.....otx.early">
+        <viz:color r="213" g="94" b="0"/>
+        <attvalues>
+          <attvalue for="att1" value="8.656361"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="214" source="N_Ne....PRDM14d" target="retractor.muscle.RM.1">
+        <viz:color r="213" g="94" b="0"/>
+        <attvalues>
+          <attvalue for="att1" value="4.078142"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="215" source="N_Ne....PRDM14d" target="retractor.muscle.RM.2" weight="2.0">
+        <viz:color r="204" g="121" b="167"/>
+        <attvalues>
+          <attvalue for="att1" value="4.055298"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="216" source="N_Ne....PRDM14d" target="retractor.muscle.TR.1">
+        <viz:color r="213" g="94" b="0"/>
+        <attvalues>
+          <attvalue for="att1" value="3.7583773"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="217" source="N_Ne....PRDM14d" target="retractor.muscle.MR.1" weight="2.0">
+        <viz:color r="204" g="121" b="167"/>
+        <attvalues>
+          <attvalue for="att1" value="3.988827"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="218" source="N_Ne....PRDM14d" target="retractor.muscle.MR.2">
+        <viz:color r="213" g="94" b="0"/>
+        <attvalues>
+          <attvalue for="att1" value="3.469081"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="221" source="N_Ne....PRDM14d" target="endomesoderm.embryonic.1">
+        <viz:color r="204" g="121" b="167"/>
+        <attvalues>
+          <attvalue for="att1" value="3.6273308"/>
+          <attvalue for="att2" value="PRGa | NV2.16299"/>
+        </attvalues>
+      </edge>
+      <edge id="238" source="N_Nl....ao.PRGa" target="N_Ns....AshA.NOT">
+        <viz:color r="254" g="217" b="118"/>
+        <attvalues>
+          <attvalue for="att1" value="3.3399312"/>
+          <attvalue for="att2" value="QGRFa | NV2.8437"/>
+        </attvalues>
+      </edge>
+      <edge id="239" source="N_Nl....ao.PRGa" target="N_S.cellulase">
+        <viz:color r="254" g="217" b="118"/>
+        <attvalues>
+          <attvalue for="att1" value="4.3360844"/>
+          <attvalue for="att2" value="QGRFa | NV2.8437"/>
+        </attvalues>
+      </edge>
+      <edge id="240" source="N_Ne.....pit.1" target="N_N....evx" weight="2.0">
+        <viz:color r="189" g="0" b="38"/>
+        <attvalues>
+          <attvalue for="att1" value="6.8857074"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="241" source="N_Ne.....pit.1" target="N_Ns....AshA.NOT" weight="3.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="7.380526"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="242" source="N_Ne.....pit.1" target="N_S.cellulase">
+        <viz:color r="254" g="217" b="118"/>
+        <attvalues>
+          <attvalue for="att1" value="5.4373965"/>
+          <attvalue for="att2" value="QGRFa | NV2.8437"/>
+        </attvalues>
+      </edge>
+      <edge id="243" source="N_Ne.....pit.1" target="N_N....NOT2" weight="3.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="5.0241065"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="244" source="N_N....barh2" target="N_S.cellulase">
+        <viz:color r="254" g="217" b="118"/>
+        <attvalues>
+          <attvalue for="att1" value="3.1806395"/>
+          <attvalue for="att2" value="QGRFa | NV2.8437"/>
+        </attvalues>
+      </edge>
+      <edge id="245" source="N_N....fez.1" target="N_Ne.....pit.1" weight="2.0">
+        <viz:color r="254" g="178" b="76"/>
+        <attvalues>
+          <attvalue for="att1" value="6.008923"/>
+          <attvalue for="att2" value="QGRFa | NV2.8437"/>
+        </attvalues>
+      </edge>
+      <edge id="246" source="N_N....fez.1" target="N_N....vsx.1">
+        <viz:color r="254" g="217" b="118"/>
+        <attvalues>
+          <attvalue for="att1" value="3.5505862"/>
+          <attvalue for="att2" value="QGRFa | NV2.8437"/>
+        </attvalues>
+      </edge>
+      <edge id="247" source="N_N....fez.1" target="N_N....evx">
+        <viz:color r="254" g="217" b="118"/>
+        <attvalues>
+          <attvalue for="att1" value="5.4688597"/>
+          <attvalue for="att2" value="QGRFa | NV2.8437"/>
+        </attvalues>
+      </edge>
+      <edge id="248" source="N_N....fez.1" target="N_Ns....AshA.NOT">
+        <viz:color r="254" g="217" b="118"/>
+        <attvalues>
+          <attvalue for="att1" value="6.456642"/>
+          <attvalue for="att2" value="QGRFa | NV2.8437"/>
+        </attvalues>
+      </edge>
+      <edge id="249" source="N_N....fez.1" target="N_S2.tll.2">
+        <viz:color r="254" g="217" b="118"/>
+        <attvalues>
+          <attvalue for="att1" value="3.6045628"/>
+          <attvalue for="att2" value="QGRFa | NV2.8437"/>
+        </attvalues>
+      </edge>
+      <edge id="250" source="N_N....fez.1" target="N_S.cellulase">
+        <viz:color r="254" g="217" b="118"/>
+        <attvalues>
+          <attvalue for="att1" value="8.382372"/>
+          <attvalue for="att2" value="QGRFa | NV2.8437"/>
+        </attvalues>
+      </edge>
+      <edge id="251" source="N_N....fez.1" target="N_S.DD3">
+        <viz:color r="254" g="217" b="118"/>
+        <attvalues>
+          <attvalue for="att1" value="3.3558056"/>
+          <attvalue for="att2" value="QGRFa | NV2.8437"/>
+        </attvalues>
+      </edge>
+      <edge id="252" source="N_N....fez.1" target="N_N....fez.1">
+        <viz:color r="254" g="217" b="118"/>
+        <attvalues>
+          <attvalue for="att1" value="3.7481647"/>
+          <attvalue for="att2" value="QGRFa | NV2.8437"/>
+        </attvalues>
+      </edge>
+      <edge id="253" source="N_N....fez.1" target="N_N....NOT2">
+        <viz:color r="254" g="217" b="118"/>
+        <attvalues>
+          <attvalue for="att1" value="4.7627945"/>
+          <attvalue for="att2" value="QGRFa | NV2.8437"/>
+        </attvalues>
+      </edge>
+      <edge id="254" source="N_N....fez.1" target="gland.mucous.1">
+        <viz:color r="254" g="217" b="118"/>
+        <attvalues>
+          <attvalue for="att1" value="4.0929265"/>
+          <attvalue for="att2" value="QGRFa | NV2.8437"/>
+        </attvalues>
+      </edge>
+      <edge id="255" source="N_N....fez.2" target="N_N....evx">
+        <viz:color r="254" g="217" b="118"/>
+        <attvalues>
+          <attvalue for="att1" value="3.4989336"/>
+          <attvalue for="att2" value="QGRFa | NV2.8437"/>
+        </attvalues>
+      </edge>
+      <edge id="256" source="N_N....fez.2" target="N_Ns....AshA.NOT">
+        <viz:color r="254" g="217" b="118"/>
+        <attvalues>
+          <attvalue for="att1" value="4.130909"/>
+          <attvalue for="att2" value="QGRFa | NV2.8437"/>
+        </attvalues>
+      </edge>
+      <edge id="257" source="N_N....fez.2" target="N_S.cellulase">
+        <viz:color r="254" g="217" b="118"/>
+        <attvalues>
+          <attvalue for="att1" value="5.362976"/>
+          <attvalue for="att2" value="QGRFa | NV2.8437"/>
+        </attvalues>
+      </edge>
+      <edge id="258" source="N_N....fez.2" target="N_N....NOT2">
+        <viz:color r="254" g="217" b="118"/>
+        <attvalues>
+          <attvalue for="att1" value="3.0471988"/>
+          <attvalue for="att2" value="QGRFa | NV2.8437"/>
+        </attvalues>
+      </edge>
+      <edge id="259" source="N_Nl....ao.PRGa" target="N_Ne.....pit.1">
+        <viz:color r="254" g="178" b="76"/>
+        <attvalues>
+          <attvalue for="att1" value="3.1083322"/>
+          <attvalue for="att2" value="QGRFa | NV2.8437"/>
+        </attvalues>
+      </edge>
+      <edge id="260" source="N_Nl....ao.PRGa" target="N_Ns..e..AshD">
+        <viz:color r="254" g="178" b="76"/>
+        <attvalues>
+          <attvalue for="att1" value="6.126668"/>
+          <attvalue for="att2" value="QGRFa | NV2.8437"/>
+        </attvalues>
+      </edge>
+      <edge id="261" source="N_Nl....ao.PRGa" target="N_Ns....Gsx">
+        <viz:color r="254" g="178" b="76"/>
+        <attvalues>
+          <attvalue for="att1" value="3.825499"/>
+          <attvalue for="att2" value="QGRFa | NV2.8437"/>
+        </attvalues>
+      </edge>
+      <edge id="262" source="N_Ne.....pit.1" target="N_Ne.....pit.1" weight="2.0">
+        <viz:color r="189" g="0" b="38"/>
+        <attvalues>
+          <attvalue for="att1" value="6.458213"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="263" source="N_Ne.....pit.1" target="N_Ns..e..AshD" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="11.165066"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="264" source="N_Ne.....pit.1" target="N_Ns....Gsx" weight="3.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="4.0424433"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="265" source="N_S.klf5.early.state" target="N_Ns..e..AshD">
+        <viz:color r="254" g="178" b="76"/>
+        <attvalues>
+          <attvalue for="att1" value="3.089098"/>
+          <attvalue for="att2" value="QGRFa | NV2.8437"/>
+        </attvalues>
+      </edge>
+      <edge id="266" source="N_N....barh2" target="N_Ns..e..AshD">
+        <viz:color r="254" g="178" b="76"/>
+        <attvalues>
+          <attvalue for="att1" value="4.494083"/>
+          <attvalue for="att2" value="QGRFa | NV2.8437"/>
+        </attvalues>
+      </edge>
+      <edge id="268" source="N_N....fez.1" target="N_Ns..e..AshD">
+        <viz:color r="254" g="178" b="76"/>
+        <attvalues>
+          <attvalue for="att1" value="11.843867"/>
+          <attvalue for="att2" value="QGRFa | NV2.8437"/>
+        </attvalues>
+      </edge>
+      <edge id="269" source="N_N....fez.1" target="N_Ns....Gsx">
+        <viz:color r="254" g="178" b="76"/>
+        <attvalues>
+          <attvalue for="att1" value="7.3953257"/>
+          <attvalue for="att2" value="QGRFa | NV2.8437"/>
+        </attvalues>
+      </edge>
+      <edge id="270" source="N_N....fez.1" target="N_S.klf5.early.state">
+        <viz:color r="254" g="178" b="76"/>
+        <attvalues>
+          <attvalue for="att1" value="3.0382736"/>
+          <attvalue for="att2" value="QGRFa | NV2.8437"/>
+        </attvalues>
+      </edge>
+      <edge id="271" source="N_N....fez.1" target="N_N....barh2">
+        <viz:color r="254" g="178" b="76"/>
+        <attvalues>
+          <attvalue for="att1" value="4.382337"/>
+          <attvalue for="att2" value="QGRFa | NV2.8437"/>
+        </attvalues>
+      </edge>
+      <edge id="272" source="N_N....fez.2" target="N_Ne.....pit.1">
+        <viz:color r="254" g="178" b="76"/>
+        <attvalues>
+          <attvalue for="att1" value="3.844462"/>
+          <attvalue for="att2" value="QGRFa | NV2.8437"/>
+        </attvalues>
+      </edge>
+      <edge id="273" source="N_N....fez.2" target="N_Ns..e..AshD">
+        <viz:color r="254" g="178" b="76"/>
+        <attvalues>
+          <attvalue for="att1" value="7.577614"/>
+          <attvalue for="att2" value="QGRFa | NV2.8437"/>
+        </attvalues>
+      </edge>
+      <edge id="274" source="N_N....fez.2" target="N_Ns....Gsx">
+        <viz:color r="254" g="178" b="76"/>
+        <attvalues>
+          <attvalue for="att1" value="4.7314715"/>
+          <attvalue for="att2" value="QGRFa | NV2.8437"/>
+        </attvalues>
+      </edge>
+      <edge id="276" source="N_N.S2....rough.1" target="N_Ne....Nkx2.2">
+        <viz:color r="252" g="78" b="42"/>
+        <attvalues>
+          <attvalue for="att1" value="3.1911058"/>
+          <attvalue for="att2" value="QWa | NV2.4017"/>
+        </attvalues>
+      </edge>
+      <edge id="277" source="N_Ne.....pit.1" target="N_N....Nk1.early" weight="3.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="7.7639904"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="278" source="N_Ne.....pit.1" target="retractor.muscle.TR.2" weight="3.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="4.3395553"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="281" source="N_Ne.....otx.early" target="N_N....vsx.1">
+        <viz:color r="189" g="0" b="38"/>
+        <attvalues>
+          <attvalue for="att1" value="3.0856142"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="282" source="N_Ne.....otx.early" target="N_N....GFI1B.prdm">
+        <viz:color r="189" g="0" b="38"/>
+        <attvalues>
+          <attvalue for="att1" value="3.5556421"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="283" source="N_Ne.....otx.early" target="N_Ns....Gsx">
+        <viz:color r="189" g="0" b="38"/>
+        <attvalues>
+          <attvalue for="att1" value="3.454989"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="285" source="N_Ne.....otx.early" target="immune.NPC">
+        <viz:color r="189" g="0" b="38"/>
+        <attvalues>
+          <attvalue for="att1" value="5.012347"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="286" source="N_Ne.....otx.early" target="gastrodermis.neural">
+        <viz:color r="189" g="0" b="38"/>
+        <attvalues>
+          <attvalue for="att1" value="3.259507"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="287" source="N_Ne.....pit.1" target="pSC.NPC.2">
+        <viz:color r="189" g="0" b="38"/>
+        <attvalues>
+          <attvalue for="att1" value="4.361659"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="289" source="N_Ne.....pit.1" target="N_Ne....Nkx2.2" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="3.2667434"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="290" source="N_Ne.....pit.1" target="N_Ne....otx.Six1.2" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="8.015205"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="292" source="N_Ne.....pit.1" target="N_N....Ap2.early" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="6.1571913"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="293" source="N_Ne.....pit.1" target="N_N....vsx.1" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="6.215498"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="295" source="N_Ne.....pit.1" target="N_N....GFI1B.prdm" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="5.5391197"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="296" source="N_Ne.....pit.1" target="N_N....GFI1B.nk25" weight="3.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="21.669796"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="299" source="N_Ne.....pit.1" target="N_Ns....Otp" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="6.206601"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="300" source="N_Ne.....pit.1" target="N_Ns....foxQ2d">
+        <viz:color r="189" g="0" b="38"/>
+        <attvalues>
+          <attvalue for="att1" value="23.425833"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="301" source="N_Ne.....pit.1" target="N_Ns....foxQ2d.early" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="12.727005"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="302" source="N_Ne.....pit.1" target="N_S.klf5.tsp" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="5.372649"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="303" source="N_Ne.....pit.1" target="N_S.klf5.early.state" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="7.4792447"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="304" source="N_Ne.....pit.1" target="N_S2.tll.4" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="5.8066936"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="305" source="N_Ne.....pit.1" target="N_S2.tll.3" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="3.754275"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="306" source="N_Ne.....pit.1" target="N_S.DD3" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="6.784484"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="307" source="N_Ne.....pit.1" target="N_NSDg.early" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="5.6196127"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="308" source="N_Ne.....pit.1" target="N_gland.d.HE" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="4.665313"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="309" source="N_Ne.....pit.1" target="N_S3" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="4.0915623"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="310" source="N_Ne.....pit.1" target="N_N....barh2" weight="2.0">
+        <viz:color r="128" g="0" b="38"/>
+        <attvalues>
+          <attvalue for="att1" value="3.50902"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="311" source="N_Ne.....pit.1" target="N_N....fez.1" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="4.6409698"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="312" source="N_Ne.....pit.1" target="N_N....fez.2" weight="3.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="3.4082677"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="314" source="N_Ne.....pit.1" target="N_immune" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="3.6583037"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="315" source="N_Ne.....pit.1" target="gland.mucous.1" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="3.7269967"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="316" source="N_Ne.....pit.1" target="gland.mucous.2" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="4.4474688"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="317" source="N_Ne.....pit.1" target="gland.mucous.ERG" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="7.013557"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="318" source="N_Ne.....pit.1" target="gland.mucous.5HT" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="10.062787"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="319" source="N_Ne.....pit.1" target="gland.mucous.HSP" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="4.579003"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="320" source="N_Ne.....pit.1" target="immune.1" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="8.517022"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="321" source="N_Ne.....pit.1" target="immune.NPC">
+        <viz:color r="189" g="0" b="38"/>
+        <attvalues>
+          <attvalue for="att1" value="20.032415"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="322" source="N_Ne.....pit.1" target="cnidocyte.mature" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="4.478372"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="323" source="N_Ne.....pit.1" target="cnidocyte.maturing.1" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="3.7861812"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="325" source="N_Ne.....pit.1" target="retractor.muscle.MR.1" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="6.487312"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="326" source="N_Ne.....pit.1" target="gastrodermis.1" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="7.301427"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="327" source="N_Ne.....pit.1" target="gastrodermis.2" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="9.72874"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="328" source="N_Ne.....pit.1" target="gastrodermis.3" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="8.879078"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="329" source="N_Ne.....pit.1" target="gastrodermis.histone" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="9.315944"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="330" source="N_Ne.....pit.1" target="gastrodermis.FoxA" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="9.528731"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="331" source="N_Ne.....pit.1" target="gastrodermis.neural" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="10.682826"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="332" source="N_Ne.....pit.1" target="gastrodermis.immune" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="12.108652"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="333" source="N_Ne.....pit.1" target="pharyngeal.ect.Brachyury">
+        <viz:color r="189" g="0" b="38"/>
+        <attvalues>
+          <attvalue for="att1" value="4.9462376"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="334" source="N_Ne.....pit.1" target="pharyngeal.ect.Wnt1" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="6.7009883"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="335" source="N_Ne.....pit.1" target="ectoderm.embryonic.1" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="6.421524"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="336" source="N_Ne.....pit.1" target="ectoderm.embryonic.aboral" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="8.095509"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="337" source="N_Ne.....pit.1" target="ectoderm.embryonic.oral" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="6.334502"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="338" source="N_Ne.....pit.1" target="epithelia.ect.1" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="7.1023645"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="339" source="N_Ne.....pit.1" target="epithelia.ect.2" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="8.035252"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="340" source="N_Ne.....pit.1" target="epithelia.ect.mitotic" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="7.493682"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="341" source="N_Ne.....pit.1" target="epithelia.ect.aboral" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="9.798732"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="342" source="N_Ne.....pit.1" target="epithelia.ect.ciliated" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="7.444439"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="343" source="N_Ne.....pit.1" target="epithelia.ect.klf5" weight="2.0">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="11.848744"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="344" source="N_N....emx3" target="N_Ns....foxQ2d">
+        <viz:color r="189" g="0" b="38"/>
+        <attvalues>
+          <attvalue for="att1" value="3.9541764"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="345" source="N_N....emx3" target="immune.NPC">
+        <viz:color r="189" g="0" b="38"/>
+        <attvalues>
+          <attvalue for="att1" value="3.381383"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="346" source="N_S.klf5.early.state" target="N_Ns....foxQ2d">
+        <viz:color r="189" g="0" b="38"/>
+        <attvalues>
+          <attvalue for="att1" value="3.8081853"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="347" source="N_S.klf5.early.state" target="immune.NPC">
+        <viz:color r="189" g="0" b="38"/>
+        <attvalues>
+          <attvalue for="att1" value="3.2565398"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="348" source="N_immune" target="N_N....Ap2.early">
+        <viz:color r="189" g="0" b="38"/>
+        <attvalues>
+          <attvalue for="att1" value="4.009815"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="349" source="N_immune" target="N_N....GFI1B.prdm">
+        <viz:color r="189" g="0" b="38"/>
+        <attvalues>
+          <attvalue for="att1" value="3.3262708"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="350" source="N_immune" target="N_Ns....Gsx">
+        <viz:color r="189" g="0" b="38"/>
+        <attvalues>
+          <attvalue for="att1" value="3.2321105"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="351" source="N_immune" target="N_Ns....foxQ2d">
+        <viz:color r="189" g="0" b="38"/>
+        <attvalues>
+          <attvalue for="att1" value="5.483305"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="352" source="N_immune" target="immune.NPC">
+        <viz:color r="189" g="0" b="38"/>
+        <attvalues>
+          <attvalue for="att1" value="4.689005"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="353" source="N_immune" target="gastrodermis.neural">
+        <viz:color r="189" g="0" b="38"/>
+        <attvalues>
+          <attvalue for="att1" value="3.049239"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="354" source="gastrodermis.immune" target="N_Ns....foxQ2d">
+        <viz:color r="189" g="0" b="38"/>
+        <attvalues>
+          <attvalue for="att1" value="3.2632496"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="359" source="N_Ne.....otx.early" target="N_Ns....foxQ2d.early">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="3.184447"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="360" source="N_Ne.....otx.early" target="gastrodermis.immune">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="3.029728"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="361" source="N_Ne.....pit.1" target="pSC.Mitotic.1">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="5.962264"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="362" source="N_Ne.....pit.1" target="pSC.Mitotic.2">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="7.08776"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="363" source="N_Ne.....pit.1" target="pSC.Endo.NPC.2">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="4.690236"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="364" source="N_Ne.....pit.1" target="pSC.NPC.1">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="5.7427287"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="365" source="N_Ne.....pit.1" target="pSC.immune">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="10.304436"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="366" source="N_Ne.....pit.1" target="PGCs.PGCs">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="7.591861"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="367" source="N_Ne.....pit.1" target="PGCs.spermatagonia.1">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="3.4230475"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="384" source="N_Ne.....pit.1" target="N_S.AGRIN.ao">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="7.75856"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="388" source="N_Ne.....pit.1" target="N_gland.d.SVEP.2">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="7.2430444"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="389" source="N_Ne.....pit.1" target="N_gland.d.SoxA">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="4.104324"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="390" source="N_Ne.....pit.1" target="N_gland.d.CPB2.1">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="4.1362667"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="392" source="N_Ne.....pit.1" target="N_Ne....PRDM14d">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="8.900352"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="396" source="N_Ne.....pit.1" target="N_N....runx">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="5.944638"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="397" source="N_Ne.....pit.1" target="N_TR.N....Tbx20a">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="8.378353"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="405" source="N_Ne.....pit.1" target="immune.2">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="6.7472854"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="406" source="N_Ne.....pit.1" target="immune.3">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="7.899596"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="407" source="N_Ne.....pit.1" target="immune.pSC">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="4.9631095"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="410" source="N_Ne.....pit.1" target="cnidocyte.gast.1">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="4.5282316"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="411" source="N_Ne.....pit.1" target="cnidocyte.pSC">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="6.797723"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="412" source="N_Ne.....pit.1" target="cnidocyte.nep.8">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="5.608488"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="413" source="N_Ne.....pit.1" target="retractor.muscle.RM.2">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="4.8300176"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="419" source="N_Ne.....pit.1" target="gastrodermis.pharyngeal">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="8.033308"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="424" source="N_Ne.....pit.1" target="pharyngeal.ect.1">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="6.615108"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="425" source="N_Ne.....pit.1" target="pharyngeal.ect.SoxC">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="6.935213"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="427" source="N_Ne.....pit.1" target="pharyngeal.ect.DLGP5">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="5.7292476"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="428" source="N_Ne.....pit.1" target="pharyngeal.ect.Ets">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="6.3096757"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="429" source="N_Ne.....pit.1" target="pharyngeal.ect.ciliated">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="5.7781963"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="439" source="N_Ne.....pit.1" target="epithelia.ect.OtxA">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="6.423415"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="440" source="N_N....emx3" target="N_N....GFI1B.nk25">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="3.6577652"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="441" source="N_S.klf5.early.state" target="N_N....GFI1B.nk25">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="3.522718"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="442" source="N_immune" target="N_N....GFI1B.nk25">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="5.072268"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+      <edge id="443" source="gastrodermis.immune" target="N_N....GFI1B.nk25">
+        <viz:color r="191" g="211" b="230"/>
+        <attvalues>
+          <attvalue for="att1" value="3.0186312"/>
+          <attvalue for="att2" value="FLRNa | NV2.1448"/>
+        </attvalues>
+      </edge>
+    </edges>
+  </graph>
+</gexf>
