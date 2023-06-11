@@ -1,4 +1,4 @@
-#code to generate Figure 6 of the Thiel, Yanez-Guerra et al. paper on Nematostella peptide-GPCRs
+#code to generate Figure 6 and Figure 6-figure supplement 1 of the Thiel, Yanez-Guerra et al. paper on Nematostella peptide-GPCRs
 #Gaspar Jekely 2023
 
 library(tidyverse)
@@ -1024,19 +1024,19 @@ EFGH
 IJKL
 "
 
-Fig5_fig_suppl1 <- panel_all_dev +  panel_LRWa_dev + panel_FLRNa_dev + panel_PRGa_dev +
+Fig6_fig_suppl1 <- panel_all_dev +  panel_LRWa_dev + panel_FLRNa_dev + panel_PRGa_dev +
   panel_all +  panel_LRWa + panel_FLRNa + panel_PRGa + 
   panel_QGRFa + panel_HIRa + panel_VRHa + panel_QWa +
   plot_layout(design = layout, guides = "collect", heights = c(1, 0.05, 1, 0.05, 1)) +
   plot_annotation(tag_levels = "A") &
   theme(plot.tag = element_text(size = 12, face = "plain"))
 
-ggsave("figures/Fig5_fig_suppl1.pdf",
+ggsave("figures/Fig6_fig_suppl1.pdf",
        limitsize = FALSE,
-       units = c("px"), Fig5_fig_suppl1, width = 1750*4, height = 1480*3+150
+       units = c("px"), Fig6_fig_suppl1, width = 1750*4, height = 1480*3+150
 )
 
-ggsave("figures/Fig5_fig_suppl1.png",
+ggsave("figures/Fig6_fig_suppl1.png",
        limitsize = FALSE,
-       units = c("px"), Fig5_fig_suppl1, width = 1750*4, height = 1480*3+150, bg = "white"
+       units = c("px"), Fig6_fig_suppl1, width = 1750*4, height = 1480*3+150, bg = "white"
 )
