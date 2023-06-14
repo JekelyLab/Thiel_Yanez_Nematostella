@@ -197,4 +197,4 @@ ggsave(
 
 # save the table as supplementary file ------------------------------------
 
-readr::write_csv(AllGPCRtoplot, file="supplements/Supplementary_table1.csv", na="", quote="none")
+readr::write_csv(AllGPCRtoplot, file="source_data/Figure_3–source_data_1.csv", na="", quote="none")
