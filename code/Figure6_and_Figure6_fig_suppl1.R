@@ -932,7 +932,7 @@ panel_all_dev <- ggdraw() + draw_image(
     "pictures/peptidergic_networks_full_modules_dev.png"
   )
 ) +
-  draw_label("all - developmental subset", x = 0.22, y = 0.98, size = 11)
+  draw_label("Leiden modules\ndev. subset", x = 0.12, y = 0.98, size = 14, hjust = 0)
 
 
 panel_LRWa_dev <- ggdraw() + draw_image(
@@ -940,21 +940,21 @@ panel_LRWa_dev <- ggdraw() + draw_image(
     "pictures/peptidergic_networks_full_peptide_dev_LRWa-1 | NV2.10311.png"
   )
 ) +
-  draw_label("LRWa", x = 0.1, y = 0.98, size = 11)
+  draw_label("LRWa\ndev. subset", x = 0.1, y = 0.98, size = 14, hjust = 0)
 
 panel_PRGa_dev <- ggdraw() + draw_image(
   readPNG(
     "pictures/peptidergic_networks_full_peptide_dev_PRGa | NV2.16299.png"
   )
 ) +
-  draw_label("PRGa", x = 0.1, y = 0.98, size = 11)
+  draw_label("PRGa\ndev. subset", x = 0.1, y = 0.98, size = 14, hjust = 0)
 
 panel_FLRNa_dev <- ggdraw() + draw_image(
   readPNG(
     "pictures/peptidergic_networks_full_peptide_dev_FLRNa | NV2.1448.png"
   )
 ) +
-  draw_label("FLRNa", x = 0.1, y = 0.98, size = 11)
+  draw_label("FLRNa\ndev. subset", x = 0.1, y = 0.98, size = 14, hjust = 0)
 
 
 
@@ -965,56 +965,56 @@ panel_all <- ggdraw() + draw_image(
     "pictures/peptidergic_networks_full_modules.png"
     )
   ) +
-  draw_label("all - adult subset", x = 0.2, y = 0.98, size = 11)
+  draw_label("Leiden modules\nadult subset", x = 0.12, y = 0.98, size = 14, hjust = 0)
 
 panel_HIRa <- ggdraw() + draw_image(
   readPNG(
     "pictures/peptidergic_networks_full_peptide_HIRa | NV2.8166.png"
     )
   ) +
-  draw_label("HIRa", x = 0.1, y = 0.98, size = 11)
+  draw_label("HIRa\nadult subset", x = 0.1, y = 0.98, size = 14, hjust = 0)
 
 panel_LRWa <- ggdraw() + draw_image(
   readPNG(
     "pictures/peptidergic_networks_full_peptide_LRWa-1 | NV2.10311.png"
     )
   ) +
-  draw_label("LRWa", x = 0.1, y = 0.98, size = 11)
+  draw_label("LRWa\nadult subset", x = 0.1, y = 0.98, size = 14, hjust = 0)
 
 panel_PRGa <- ggdraw() + draw_image(
   readPNG(
     "pictures/peptidergic_networks_full_peptide_PRGa | NV2.16299.png"
     )
   ) +
-  draw_label("PRGa", x = 0.1, y = 0.98, size = 11)
+  draw_label("PRGa\nadult subset", x = 0.1, y = 0.98, size = 14, hjust = 0)
 
 panel_QGRFa <- ggdraw() + draw_image(
   readPNG(
     "pictures//peptidergic_networks_full_peptide_QGRFa | NV2.8437.png"
     )
   ) +
-  draw_label("QGRFa", x = 0.1, y = 0.98, size = 11)
+  draw_label("QGRFa\nadult subset", x = 0.1, y = 0.98, size = 14, hjust = 0)
 
 panel_QWa <- ggdraw() + draw_image(
   readPNG(
     "pictures/peptidergic_networks_full_peptide_QWa | NV2.4017.png"
     )
   ) +
-  draw_label("QWa", x = 0.1, y = 0.98, size = 11)
+  draw_label("QWa\nadult subset", x = 0.1, y = 0.98, size = 14, hjust = 0)
 
 panel_FLRNa <- ggdraw() + draw_image(
   readPNG(
     "pictures/peptidergic_networks_full_peptide_FLRNa | NV2.1448.png"
     )
   ) +
-  draw_label("FLRNa", x = 0.1, y = 0.98, size = 11)
+  draw_label("FLRNa\nadult subset", x = 0.1, y = 0.98, size = 14, hjust = 0)
 
 panel_VRHa <- ggdraw() + draw_image(
   readPNG(
     "pictures/peptidergic_networks_full_peptide_VRHa | NV2.15165.png"
     )
   ) +
-  draw_label("VRHa", x = 0.1, y = 0.98, size = 11)
+  draw_label("VRHa\nadult subset", x = 0.1, y = 0.98, size = 14, hjust = 0)
 
 layout <- "
 ABCD
@@ -1029,14 +1029,15 @@ Fig6_fig_suppl1 <- panel_all_dev +  panel_LRWa_dev + panel_FLRNa_dev + panel_PRG
   panel_QGRFa + panel_HIRa + panel_VRHa + panel_QWa +
   plot_layout(design = layout, guides = "collect", heights = c(1, 0.05, 1, 0.05, 1)) +
   plot_annotation(tag_levels = "A") &
-  theme(plot.tag = element_text(size = 12, face = "plain"))
+  theme(plot.tag = element_text(size = 22, face = "plain"))
+
+ggsave("figures/Fig6_fig_suppl1.png",
+       limitsize = FALSE,
+       units = c("px"), Fig6_fig_suppl1, width = 1750*4, height = 1480*3+150, bg = "white"
+)
 
 ggsave("figures/Fig6_fig_suppl1.pdf",
        limitsize = FALSE,
        units = c("px"), Fig6_fig_suppl1, width = 1750*4, height = 1480*3+150
 )
 
-ggsave("figures/Fig6_fig_suppl1.png",
-       limitsize = FALSE,
-       units = c("px"), Fig6_fig_suppl1, width = 1750*4, height = 1480*3+150, bg = "white"
-)
