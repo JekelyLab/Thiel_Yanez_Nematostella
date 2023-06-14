@@ -170,4 +170,4 @@ for (i in ListREceptors) {
 
 # save the table as supplementary file ------------------------------------
 
-readr::write_csv(AllGPCRtoplot, file="supplements/Supplementary_table_HIRaPRGa.csv", na="", quote="none")
+readr::write_csv(AllGPCRtoplot, file="source_data/Figure_3–figure_supplement_1and2–source_data_1.csv", na="", quote="none")
