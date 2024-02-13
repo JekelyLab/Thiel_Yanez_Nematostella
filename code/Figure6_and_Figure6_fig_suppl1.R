@@ -28,12 +28,11 @@ blues <- brewer.pal(9, 'Blues')
 bluepurple <- brewer.pal(9, 'BuPu')
 oranges <- brewer.pal(9, 'YlOrRd')
 
-
-GPCR <- readRDS("data/GPCR.data.rds")
+GPCR <- readRDS("data/GPC.data_new_names.RDS")
 
 #some methods
-#GPCR@meta.data
-#GetAssayData(GPCR)
+GPCR@meta.data
+GetAssayData(GPCR)
 #FindAllMarkers(GPCR)
 #rownames(GPCR)
 #GPCR@assays
@@ -84,55 +83,55 @@ celltypes <- unique(avg_expression_tibble %>%
   pull())
 
 pNPs <- c(
-  "GLWL-a | NV2.23205",
-  "HIRa | NV2.8166",
-  "HIRa | NV2.8166",
-  "LRWa-1 | NV2.10311",
-  "LRWa-1 | NV2.10311",
-  "LRWa-1 | NV2.10311",
-  "LRWa-1 | NV2.10311",
-  "PRGa | NV2.16299", "PRGa | NV2.16299",
-  "PRGa | NV2.16299", "PRGa | NV2.16299",
-  "PRGa | NV2.16299", "PRGa | NV2.16299",
-  "PRGa | NV2.16299", "PRGa | NV2.16299",
-  "PRGa | NV2.16299", "PRGa | NV2.16299",
-  "PRGa | NV2.16299", "PRGa | NV2.16299",
-  "PRGa | NV2.16299",
-  "QGRFa | NV2.8437", "QGRFa | NV2.8437",
-  "QITRFa | NV2.23834",
-  "QWa | NV2.4017",
-  "FLRNa | NV2.1448",
-  "FLRNa | NV2.1448",
-  "FLRNa | NV2.1448",
-  "FLRNa | NV2.1448",
-  "FLRNa | NV2.1448",
-  "VRHa | NV2.15165"
+  "GLWL-a : NV2.23205",
+  "HIRa : NV2.8166",
+  "HIRa : NV2.8166",
+  "LRWa-1 : NV2.10311",
+  "LRWa-1 : NV2.10311",
+  "LRWa-1 : NV2.10311",
+  "LRWa-1 : NV2.10311",
+  "PRGa : NV2.16299", "PRGa : NV2.16299",
+  "PRGa : NV2.16299", "PRGa : NV2.16299",
+  "PRGa : NV2.16299", "PRGa : NV2.16299",
+  "PRGa : NV2.16299", "PRGa : NV2.16299",
+  "PRGa : NV2.16299", "PRGa : NV2.16299",
+  "PRGa : NV2.16299", "PRGa : NV2.16299",
+  "PRGa : NV2.16299",
+  "QGRFa : NV2.8437", "QGRFa : NV2.8437",
+  "QITRFa : NV2.23834",
+  "QWa : NV2.4017",
+  "FLRNa : NV2.1448",
+  "FLRNa : NV2.1448",
+  "FLRNa : NV2.1448",
+  "FLRNa : NV2.1448",
+  "FLRNa : NV2.1448",
+  "VRHa : NV2.15165"
 )
 
 GPCRs <- c(
-  "GLWL-R.18a | NV2.13124",
-  "HIRa-R.21 | NV2.23510",
-  "HIRa-R.29 | NV2.24982",
-  "LRWa-R.193 | NV2.10074",
-  "LRWa1-R.19 | NV2.20941",
-  "LRWa2-R.213 | NV2.23402",
-  "LRWa3-R.204 | NV2.10076",
-  "PRGa-R.198 | NV2.22132", "PRGa-R.199 | NV2.21302",
-  "PRGa-R.200 | NV2.11164", "PRGa-R.202 | NV2.21659",
-  "PRGa-R.210 | NV2.3314", "PRGa-R.211 | NV2.1942", 
-  "PRGa-R.219 | NV2.511","PRGa-R.220 | NV2.512",  
-  "PRGa-R.221 | NV2.1941", "PRGa-R.222 | NV2.1945", 
-  "PRGa-R.223 | NV2.2307", "PRGa-R.28 | NV2.1943",  
-  "PRGa-R.32 | NV2.22136",
-  "QGRFa-R.234 | NV2.1352", "QGRFa-R.70 | NV2.9922",
-  "QITRFa-R.196 | NV2.9618",
-  "QWa-R.69 | NV2.9996",
-  "FLRNa-R.197-i2 | NV2.9939",
-  "FLRNa-R.230 | NV2.16286",
-  "FLRNa-R.26 | NV2.22838",
-  "FLRNa-R.197-i1 | NV2.14466",
-  "FLRNa-R.187 | NV2.23421",
-  "VRHa-R.186 | NV2.3564"
+  "GLWL-R.18a : NV2.13124",
+  "HIRa-R.21 : NV2.23510",
+  "HIRa-R.29 : NV2.24982",
+  "LRWa-R.193 : NV2.10074",
+  "LRWa1-R.19 : NV2.20941",
+  "LRWa2-R.213 : NV2.23402",
+  "LRWa3-R.204 : NV2.10076",
+  "PRGa-R.198 : NV2.22132", "PRGa-R.199 : NV2.21302",
+  "PRGa-R.200 : NV2.11164", "PRGa-R.202 : NV2.21659",
+  "PRGa-R.210 : NV2.3314", "PRGa-R.211 : NV2.1942", 
+  "PRGa-R.219 : NV2.511","PRGa-R.220 : NV2.512",  
+  "PRGa-R.221 : NV2.1941", "PRGa-R.222 : NV2.1945", 
+  "PRGa-R.223 : NV2.2307", "PRGa-R.28 : NV2.1943",  
+  "PRGa-R.32 : NV2.22136",
+  "QGRFa-R.234 : NV2.1352", "QGRFa-R.70 : NV2.9922",
+  "QITRFa-R.196 : NV2.9618",
+  "QWa-R.69 : NV2.9996",
+  "FLRNa-R.197-i2 : NV2.9939",
+  "FLRNa-R.230 : NV2.16286",
+  "FLRNa-R.26 : NV2.22838",
+  "FLRNa-R.197-i1 : NV2.14466",
+  "FLRNa-R.187 : NV2.23421",
+  "VRHa-R.186 : NV2.3564"
 )
 
 #EC50 values for the peptide-GPCR pairs
@@ -235,18 +234,14 @@ create_pNP_GPCR_graph <- function(pNP, GPCR, expressions, colors, cell_types, N_
 
 
 
-# create networks for ID.separate for dev subset ------------------------------------------
+# networks for ID.separate for dev subset ------------------------------------------
 
 GPCR.separate <- SetIdent(GPCR_DevSubset, value = "ID.separate")
 
 unique(Idents(GPCR.separate))
 
-# use gsub to remove the parentheses
-cleaned_ids <- gsub("[()]", "", Idents(GPCR.separate))
-cleaned_ids <- gsub("[?]", "", cleaned_ids)
-
 # set the new IDs in the Seurat object
-Idents(GPCR.separate) <- cleaned_ids
+#Idents(GPCR.separate) <- cleaned_ids
 
 # Calculate average expression of gene1 across all cells
 avg_expression_genes.separate <- AverageExpression(object = GPCR.separate, features = genes)
@@ -257,8 +252,8 @@ avg_expression_df.separate <- as.data.frame(avg_expression_genes.separate)
 # Replace column names using regex
 {
 names(avg_expression_df.separate) <- sub("RNA\\.", "", names(avg_expression_df.separate))
-names(avg_expression_df.separate) <- sub("neurogland\\.all\\.", "N_", names(avg_expression_df.separate))
-names(avg_expression_df.separate) <- sub("\\.\\.", ".", names(avg_expression_df.separate))
+names(avg_expression_df.separate) <- sub("neurogland\\.all\\.", "", names(avg_expression_df.separate))
+#names(avg_expression_df.separate) <- sub("\\.\\.", ".", names(avg_expression_df.separate))
 names(avg_expression_df.separate) <- sub("endomesoderm", "edMes", names(avg_expression_df.separate))
 names(avg_expression_df.separate) <- sub("ectomesoderm", "ecMes", names(avg_expression_df.separate))
 names(avg_expression_df.separate) <- sub("ectoderm", "ect", names(avg_expression_df.separate))
@@ -278,13 +273,14 @@ names(avg_expression_df.separate) <- sub("gland\\.mucous", "gld\\.muc", names(av
 names(avg_expression_df.separate)
 }
 
+#rename one GPCR rowname
+rownames(avg_expression_df.separate) <- sub("RYAR-like-1 : NV2.3564", "VRHa-R.186 : NV2.3564", rownames(avg_expression_df.separate))
+rownames(avg_expression_df.separate) <- sub("QRFPR-like-3 : NV2.23421", "FLRNa-R.187 : NV2.23421", rownames(avg_expression_df.separate))
+rownames(avg_expression_df.separate) <- sub("NPY2R-like-1 : NV2.3638", "FRPa-RPa-R.248 : NV2.3638", rownames(avg_expression_df.separate))
+
 avg_expression_tibble.separate <- avg_expression_df.separate %>%
   rownames_to_column(var = "genes") %>%
   pivot_longer(cols = -genes, names_to = "celltype", values_to = "avg_expression")
-
-avg_expression_tibble.separate %>%
-  select(avg_expression) %>%
-  max()
 
 avg_expression_tibble.separate %>%
   filter(genes == unlist(pNPs) | genes == unlist(GPCRs)) %>%
@@ -305,8 +301,7 @@ avg_expression_tibble.separate %>%
   geom_histogram() +
   scale_x_log10()
   
-
-# create and grow graph with function ------------------------------------
+# do graph with function ------------------------------------
 
 graph.separate <- create_pNP_GPCR_graph(
   pNPs, GPCRs, avg_expression_tibble.separate, 
@@ -558,7 +553,7 @@ webshot2::webshot(
 
 }
 
-# create networks for ID.separate for adult subset ------------------------------------------
+# networks for ID.separate for adult subset ------------------------------------------
 
 GPCR.separate <- SetIdent(GPCR_AdultSubset, value = "ID.separate")
 
@@ -572,13 +567,6 @@ DotPlot(
 
 unique(Idents(GPCR.separate))
 
-# use gsub to remove the parentheses
-cleaned_ids <- gsub("[()]", "", Idents(GPCR.separate))
-cleaned_ids <- gsub("[?]", "", cleaned_ids)
-
-# set the new IDs in the Seurat object
-Idents(GPCR.separate) <- cleaned_ids
-
 # Calculate average expression of gene1 across all cells
 avg_expression_genes.separate <- AverageExpression(object = GPCR.separate, features = genes)
 
@@ -588,8 +576,7 @@ avg_expression_df.separate <- as.data.frame(avg_expression_genes.separate)
 # Replace column names using regex
 {
   names(avg_expression_df.separate) <- sub("RNA\\.", "", names(avg_expression_df.separate))
-  names(avg_expression_df.separate) <- sub("neurogland\\.all\\.", "N_", names(avg_expression_df.separate))
-  names(avg_expression_df.separate) <- sub("\\.\\.", ".", names(avg_expression_df.separate))
+  names(avg_expression_df.separate) <- sub("neurogland\\.all\\.", "", names(avg_expression_df.separate))
   names(avg_expression_df.separate) <- sub("endomesoderm", "edMes", names(avg_expression_df.separate))
   names(avg_expression_df.separate) <- sub("ectomesoderm", "ecMes", names(avg_expression_df.separate))
   names(avg_expression_df.separate) <- sub("ectoderm", "ect", names(avg_expression_df.separate))
@@ -608,6 +595,10 @@ avg_expression_df.separate <- as.data.frame(avg_expression_genes.separate)
   
   names(avg_expression_df.separate)
 }
+
+rownames(avg_expression_df.separate) <- sub("RYAR-like-1 : NV2.3564", "VRHa-R.186 : NV2.3564", rownames(avg_expression_df.separate))
+rownames(avg_expression_df.separate) <- sub("QRFPR-like-3 : NV2.23421", "FLRNa-R.187 : NV2.23421", rownames(avg_expression_df.separate))
+rownames(avg_expression_df.separate) <- sub("NPY2R-like-1 : NV2.3638", "FRPa-RPa-R.248 : NV2.3638", rownames(avg_expression_df.separate))
 
 avg_expression_tibble.separate <- avg_expression_df.separate %>%
   rownames_to_column(var = "genes") %>%
@@ -925,8 +916,45 @@ library(patchwork)
 library(png)
 library(ggplot2)
 
+# Figure 6  ------------------
 
-#dev panels
+layout_Fig6 <- "
+A
+#
+B"
+
+panel_pep_dev <- ggdraw() + draw_image(
+  readPNG(
+    "pictures/peptidergic_networks_full_peptides_dev.png"
+  )
+) +
+  draw_label("developmental subset", x = 0.22, y = 0.98, size = 14, hjust = 0)
+
+panel_pep_ad <- ggdraw() + draw_image(
+  readPNG(
+    "pictures/peptidergic_networks_full_peptides.png"
+  )
+) +
+  draw_label("adult subset", x = 0.2, y = 0.98, size = 14, hjust = 0)
+
+
+Fig6 <- panel_pep_dev + panel_pep_ad +
+  plot_layout(design = layout_Fig6, guides = "collect", heights = c(1, 0.05, 1)) +
+  plot_annotation(tag_levels = "A") &
+  theme(plot.tag = element_text(size = 22, face = "plain"))
+
+ggsave("figures/Figure6.png",
+       limitsize = FALSE,
+       units = c("px"), Fig6, width = 1750, height = 1480*2+150, bg = "white"
+)
+
+ggsave("figures/Figure6.pdf",
+       limitsize = FALSE,
+       units = c("px"), Fig6, width = 1750, height = 1480*2+150
+)
+
+
+# Fig6 fig suppl 1 ----------------------
 panel_all_dev <- ggdraw() + draw_image(
   readPNG(
     "pictures/peptidergic_networks_full_modules_dev.png"
@@ -937,21 +965,21 @@ panel_all_dev <- ggdraw() + draw_image(
 
 panel_LRWa_dev <- ggdraw() + draw_image(
   readPNG(
-    "pictures/peptidergic_networks_full_peptide_dev_LRWa-1 | NV2.10311.png"
+    "pictures/peptidergic_networks_full_peptide_dev_LRWa-1 : NV2.10311.png"
   )
 ) +
   draw_label("LRWa\ndev. subset", x = 0.1, y = 0.98, size = 14, hjust = 0)
 
 panel_PRGa_dev <- ggdraw() + draw_image(
   readPNG(
-    "pictures/peptidergic_networks_full_peptide_dev_PRGa | NV2.16299.png"
+    "pictures/peptidergic_networks_full_peptide_dev_PRGa : NV2.16299.png"
   )
 ) +
   draw_label("PRGa\ndev. subset", x = 0.1, y = 0.98, size = 14, hjust = 0)
 
 panel_FLRNa_dev <- ggdraw() + draw_image(
   readPNG(
-    "pictures/peptidergic_networks_full_peptide_dev_FLRNa | NV2.1448.png"
+    "pictures/peptidergic_networks_full_peptide_dev_FLRNa : NV2.1448.png"
   )
 ) +
   draw_label("FLRNa\ndev. subset", x = 0.1, y = 0.98, size = 14, hjust = 0)
@@ -969,49 +997,49 @@ panel_all <- ggdraw() + draw_image(
 
 panel_HIRa <- ggdraw() + draw_image(
   readPNG(
-    "pictures/peptidergic_networks_full_peptide_HIRa | NV2.8166.png"
+    "pictures/peptidergic_networks_full_peptide_HIRa : NV2.8166.png"
     )
   ) +
   draw_label("HIRa\nadult subset", x = 0.1, y = 0.98, size = 14, hjust = 0)
 
 panel_LRWa <- ggdraw() + draw_image(
   readPNG(
-    "pictures/peptidergic_networks_full_peptide_LRWa-1 | NV2.10311.png"
+    "pictures/peptidergic_networks_full_peptide_LRWa-1 : NV2.10311.png"
     )
   ) +
   draw_label("LRWa\nadult subset", x = 0.1, y = 0.98, size = 14, hjust = 0)
 
 panel_PRGa <- ggdraw() + draw_image(
   readPNG(
-    "pictures/peptidergic_networks_full_peptide_PRGa | NV2.16299.png"
+    "pictures/peptidergic_networks_full_peptide_PRGa : NV2.16299.png"
     )
   ) +
   draw_label("PRGa\nadult subset", x = 0.1, y = 0.98, size = 14, hjust = 0)
 
 panel_QGRFa <- ggdraw() + draw_image(
   readPNG(
-    "pictures//peptidergic_networks_full_peptide_QGRFa | NV2.8437.png"
+    "pictures//peptidergic_networks_full_peptide_QGRFa : NV2.8437.png"
     )
   ) +
   draw_label("QGRFa\nadult subset", x = 0.1, y = 0.98, size = 14, hjust = 0)
 
 panel_QWa <- ggdraw() + draw_image(
   readPNG(
-    "pictures/peptidergic_networks_full_peptide_QWa | NV2.4017.png"
+    "pictures/peptidergic_networks_full_peptide_QWa : NV2.4017.png"
     )
   ) +
   draw_label("QWa\nadult subset", x = 0.1, y = 0.98, size = 14, hjust = 0)
 
 panel_FLRNa <- ggdraw() + draw_image(
   readPNG(
-    "pictures/peptidergic_networks_full_peptide_FLRNa | NV2.1448.png"
+    "pictures/peptidergic_networks_full_peptide_FLRNa : NV2.1448.png"
     )
   ) +
   draw_label("FLRNa\nadult subset", x = 0.1, y = 0.98, size = 14, hjust = 0)
 
 panel_VRHa <- ggdraw() + draw_image(
   readPNG(
-    "pictures/peptidergic_networks_full_peptide_VRHa | NV2.15165.png"
+    "pictures/peptidergic_networks_full_peptide_VRHa : NV2.15165.png"
     )
   ) +
   draw_label("VRHa\nadult subset", x = 0.1, y = 0.98, size = 14, hjust = 0)
