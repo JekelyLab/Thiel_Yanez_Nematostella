@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: "Thiel"
+given-names: "Daniel"
+orcid: "https://orcid.org/0000-0003-1398-3512"
+- family-names: "Yañez-Guerra"
+given-names: "Luis Alfonso"
+orcid: "https://orcid.org/0000-0002-2523-1310"
+- family-names: "Jékely"
+given-names: "Gáspár"
+orcid: "https://orcid.org/0000-0001-8496-9836"
+title: "Code documentation for "Large-scale deorphanization of Nematostella vectensis neuropeptide GPCRs supports the independent expansion of bilaterian and cnidarian peptidergic systems""
+version: 2.0.4
+doi: 10.5281/zenodo.10656781
+date-released: 2024-02-14
+url: "https://github.com/JekelyLab/Thiel_Yanez_Nematostella"
