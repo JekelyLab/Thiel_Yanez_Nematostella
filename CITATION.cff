@@ -3,27 +3,28 @@
 
 cff-version: 1.2.0
 title: >-
-  Code documentation for "Large-scale deorphanization of
-  Nematostella vectensis neuropeptide GPCRs supports the
-  independent expansion of bilaterian and cnidarian
-  peptidergic systems"
-message: >-
+  Code documentation for Large-scale deorphanization of Nematostella vectensis neuropeptide GPCRs supports the independent expansion of bilaterian and cnidarian peptidergic systems: >-
   If you use this software, please cite it using the
   metadata from this file.
 type: software
 authors:
   - given-names: Daniel
     family-names: Thiel
-    orcid: 'https://orcid.org/0000-0003-1398-3512'
   - given-names: Luis Alfonso
     family-names: Yañez-Guerra
-    orcid: 'https://orcid.org/0000-0002-2523-1310'
+  - given-names: Amanda
+    family-names: Kieswetter
+  - given-names: Alison
+    family-names: Cole
+  - given-names: Liesbet 
+    family-names: Temmerman
+  - given-names: Ulrich 
+    family-names: Technau
   - given-names: Gáspár
     family-names: Jékely
-    orcid: 'https://orcid.org/0000-0002-2523-1310'
 identifiers:
   - type: doi
-    value: 10.5281/zenodo.10656781
-repository-code: 'https://github.com/JekelyLab/Thiel_Yanez_Nematostella'
+    value: https://zenodo.org/doi/10.5281/zenodo.10680380
+repository-code: 'https://github.com/JekelyLab/Thiel_Yanez_Nematostella/releases/tag/v2.0.0'
 license: CC-BY-4.0
 date-released: '2024-02-14'
