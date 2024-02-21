@@ -919,38 +919,36 @@ library(ggplot2)
 # Figure 6  ------------------
 
 layout_Fig6 <- "
-A
-#
-B"
+AB"
 
 panel_pep_dev <- ggdraw() + draw_image(
   readPNG(
     "pictures/peptidergic_networks_full_peptides_dev.png"
   )
 ) +
-  draw_label("developmental subset", x = 0.22, y = 0.98, size = 14, hjust = 0)
+  draw_label("developmental subset", x = 0.1, y = 0.98, size = 14, hjust = 0)
 
 panel_pep_ad <- ggdraw() + draw_image(
   readPNG(
     "pictures/peptidergic_networks_full_peptides.png"
   )
 ) +
-  draw_label("adult subset", x = 0.2, y = 0.98, size = 14, hjust = 0)
+  draw_label("adult subset", x = 0.12, y = 0.98, size = 14, hjust = 0)
 
 
 Fig6 <- panel_pep_dev + panel_pep_ad +
-  plot_layout(design = layout_Fig6, guides = "collect", heights = c(1, 0.05, 1)) +
+  plot_layout(design = layout_Fig6, guides = "collect", widths = c(1, 1)) +
   plot_annotation(tag_levels = "A") &
   theme(plot.tag = element_text(size = 22, face = "plain"))
 
 ggsave("figures/Figure6.png",
        limitsize = FALSE,
-       units = c("px"), Fig6, width = 1750, height = 1480*2+150, bg = "white"
+       units = c("px"), Fig6, width = 3500, height = 1580, bg = "white"
 )
 
 ggsave("figures/Figure6.pdf",
        limitsize = FALSE,
-       units = c("px"), Fig6, width = 1750, height = 1480*2+150
+       units = c("px"), Fig6, width = 3500, height = 1580
 )
 
 
