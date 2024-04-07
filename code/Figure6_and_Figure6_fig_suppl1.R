@@ -13,6 +13,10 @@ library(webshot2)
 library(RColorBrewer)
 library(rgexf)
 library(leiden)
+library(cowplot)
+library(png)
+library(patchwork)
+
 
 # From Color Universal Design (CUD): https://jfly.uni-koeln.de/color/
 Okabe_Ito <- c(
@@ -937,7 +941,7 @@ panel_pep_ad <- ggdraw() + draw_image(
 
 
 Fig6 <- panel_pep_dev + panel_pep_ad +
-  plot_layout(design = layout_Fig6, guides = "collect", widths = c(1, 1)) +
+  plot_layout(design = layout_Fig6, guides = "collect", widths = c(1, 1.1)) +
   plot_annotation(tag_levels = "A") &
   theme(plot.tag = element_text(size = 22, face = "plain"))
 

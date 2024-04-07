@@ -1,0 +1,51 @@
+biological sample (N. vectensis)	larval, juvenile and adult N. vectensis	Specimens obtained form the Marine Invertebrate Culture Unit of the University of Exeter	N/A	
+biological sample (cDNA)	cDNA obtained from N. vectensis	this study	N/A	RNA extracted with Trizol and cDNA synthesized with cDNA synthesis kit according to manufacturers recommendation
+biological sample (peptide extract)	peptide extracts obtained from N. vectensis	this study	N/A	Peptides extracted from N. vectensis according to protocol explained in Material and Methods
+genetic reagent (cDNA synthesis)	SuperScript™ III First-Strand Synthesis System	Invitrogen (from ThermoFisher)	18080051	
+genetic reagent (Polymerase)	Q5® Hot Start High-Fidelity DNA Polymerase 	New England Biolabs	M0493L	
+genetic reagent (DNA assembly)	NEBuilder® HiFi DNA Assembly Master Mix	New England Biolabs	E2621L	
+genetic reagent (restriction enzyme)	EcoRV restriction enzyme	New England Biolabs	R3195L	
+genetic reagent (restriction enzyme)	Afl2 restriction enzyme	New England Biolabs	R0520L	
+genetic reagent (restriction enzyme)	Hind3 restriction enzyme	New England Biolabs	R3104L	
+genetic reagent (restriction enzyme)	BamH1 restriction enzyme	New England Biolabs	R3136L	
+genetic reagent (restriction enzyme)	EcoRI restriction enzyme	New England Biolabs	R3101L	
+recombinant DNA reagent (plasmid)	pcDNA3.1(+)	Invitrogen (from ThermoFisher)	V79020	
+recombinant DNA reagent (plasmid)	pRK5-Gqi9	AddGene	125711	
+recombinant DNA reagent (plasmid)	pcDNA3.1(+)-G5A	this study	N/A	sequence information provided in Supplementary file 7
+recombinant DNA reagent (plasmid)	pcDNA3.1(+)-Gqi5/9	this study	N/A	sequence information provided in Supplementary file 7
+recombinant DNA reagent	cloned N. vectensis GPCRs in pcDNA3.1(+)	identified in this study	N/A	full list of cloned GPCRs with sequences in Supplementary file 8
+recombinant DNA reagent	synthesized N. vectensis GPCRs in pcDNA3.1(+)	identified in this study, codon optimized and synthesized by GenScript	N/A	full list of synthesized GPCRs with original and codon optimized sequences in Supplementary file 8
+sequence-based reagent	cloning primers to create Gqi5/9	this study	N/A	sequence information provided in Supplementary file 7
+sequence-based reagent	GPCR cloning primers	this study	N/A	full list of primers with sequences in Supplementary file 8
+peptide, recombinant protein	custom peptides	identified in this study, synthesized by GenScript	N/A	full list of peptides with sequences and purity in Supplementary file 2 and 3
+commercial assay or kit (PCR clean up)	Monarch® PCR & DNA Cleanup Kit (5 μg)	New England Biolabs	T1030L	
+commercial assay or kit (Miniprep)	GeneJET Plasmid Miniprep Kit	Thermo Fisher Scientific	K0503	
+strain, strain background (E. coli, TOP10)	One Shot™ TOP10 Chemically Competent E. coli	Thermo Fisher Scientific	C404010	E. coli strain used for general cloning
+cell line (HEK293)	HEK293 Cells expressing GFP-AEQUORIN in Cytoplasma	Angio-Proteomie	cAP-0200GFP-AEQ-Cyto	
+chemical compound, drug	DMEM	Gibco (from ThermoFisher)	10566016	
+chemical compound, drug	OptiMEM	Gibco (from ThermoFisher)	11058021	
+chemical compound, drug	FBS	Gibco (from ThermoFisher)	10500064	
+chemical compound, drug	PEI (Polyethylenimine, 25k Mw)	Sigma-Aldrich	408727	used 0.3 µl of a 1 mg/ml stock solution per 100 ng DNA
+chemical compound, drug	Transfectamine 5000	AAT Bioquest	60022	used 0.3 µl per 100 ng of DNA
+chemical compound, drug	Coelenterazine-h	Promega	S2011	diluted to 2 mM in Ethanol and used at a final concentration of 4 µM in the assays
+chemical compound, drug	TRIzol™ Reagent	Invitrogen (from ThermoFisher)	15596026	
+other	Corning® 96 Well White Polystyrene Microplate	Corning (from Sigma-Aldrich)	CLS3903	cell culture treated assay plates
+other	Nunc™ EasYFlask™ T75 Cell Culture Flasks	Nunc (from ThermoFisher)	156499	cell culture flasks
+other	Flexstation 3 Multimode Microplate Reader	Molecular Devices		plate reader
+software, algorithm	SoftMax®  Pro 7	Molecular Devices		
+software, algorithm	R	https://cran.rstudio.com/		
+software, algorithm	RStudio	https://posit.co/download/rstudio-desktop/		
+software, algorithm	SignalP4.1	https://services.healthtech.dtu.dk/services/SignalP-6.0/		
+software, algorithm	NeuroPID	https://bio.tools/neuropid		
+software, algorithm	HMMER3.1b2	http://hmmer.org/download.html		
+software, algorithm	CD-HIT	https://sites.google.com/view/cd-hit		
+software, algorithm	TransDecoder	https://github.com/TransDecoder/TransDecoder		
+software, algorithm	CLANS (desktop version)	https://mybiosoftware.com/clans-20101007-visualize-protein-families-based-pairwise-similarity.html		
+software, algorithm	CLANS (online toolkit)	https://toolkit.tuebingen.mpg.de/tools/clans		
+software, algorithm	Phobius	https://phobius.sbc.su.se/data.html		
+software, algorithm	muscle alignment tool	https://drive5.com/muscle5/		
+software, algorithm	MAFFT v7	https://mafft.cbrc.jp/alignment/software/		
+software, algorithm	trimAl	http://trimal.cgenomics.org/trimal		
+software, algorithm	IQ-tree2	http://www.iqtree.org/		
+software, algorithm	Fasttree	http://www.microbesonline.org/fasttree/		
+
